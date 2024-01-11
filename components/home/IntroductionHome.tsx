@@ -3,6 +3,7 @@ import { ReactCompareSlider, ReactCompareSliderImage } from 'react-compare-slide
 export default function Introdcution() {
     return (
         <div className="relative overflow-hidden"
+            style={{ background: "radial-gradient(circle, #6F6F6F 1px, transparent 1px)", backgroundSize: "30px 30px" }}
         >
         <div className="max-w-[85rem] mx-auto px-4 sm:px-6 lg:px-8 py-16">
             <div className="max-w-2xl text-center mx-auto mt-10">
@@ -12,8 +13,8 @@ export default function Introdcution() {
 
             <div className="mt-10 relative max-w-5xl mx-auto">
             <ReactCompareSlider className='w-full h-128 rounded-xl' changePositionOnHover={true}
-                itemOne={<ReactCompareSliderImage src="http://pixgen.pro:8010/images/remove_object_diff_1.jpg" alt="Image one" />}
-                itemTwo={<ReactCompareSliderImage src="http://pixgen.pro:8010/images/remove_object_diffd_1.jpg" alt="Image two" />}
+                itemOne={<ReactCompareSliderImage src="https://pixgen.pro:8010/images/erase_object_diff_2.jpg" alt="Image one" />}
+                itemTwo={<ReactCompareSliderImage src="https://pixgen.pro:8010/images/erase_object_diffd_2.jpg" alt="Image two" />}
                 />
             </div>
         </div>

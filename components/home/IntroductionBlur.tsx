@@ -56,8 +56,8 @@ export default function Introdcution () {
 
             <div className="lg:col-span-4 lg:mt-20 ">
                 <ReactCompareSlider className='w-full h-96 rounded-xl' changePositionOnHover={true}
-                itemOne={<ReactCompareSliderImage src="http://pixgen.pro:8010/images/blur_diff_1.jpg" alt="Image one" />}
-                itemTwo={<ReactCompareSliderImage src="http://pixgen.pro:8010/images/blur_diffd_1.jpg" alt="Image two" />}
+                itemOne={<ReactCompareSliderImage src="https://pixgen.pro:8010/images/blur_diff_1.jpg" alt="Image one" />}
+                itemTwo={<ReactCompareSliderImage src="https://pixgen.pro:8010/images/blur_diffd_1.jpg" alt="Image two" />}
                 />
             </div>
             </div>

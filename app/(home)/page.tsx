@@ -8,7 +8,7 @@ function Home() {
         <div>
             <Introdcution />
             <Tools />
-            {/* <Price /> */}
+            <Price />
             <FAQ />
         </div>
     )
