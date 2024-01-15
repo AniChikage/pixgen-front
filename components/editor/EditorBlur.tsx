@@ -1,8 +1,9 @@
 "use client"
 import { useRouter } from 'next/navigation';
 import React, { useState, useRef, useEffect } from 'react';
+import ScaleLoaderComponent from '@/components/loading/ScaleLoader';
 
-import { getImage, blur, checkPro, uploadImage } from '@/api/apis';
+import { getImage, blur, checkPro, uploadImage, updatePro } from '@/api/apis';
 
 import { ArrowLeftIcon, FolderOpenIcon } from '@heroicons/react/24/outline';
 
@@ -21,6 +22,7 @@ const Editor = () => {
     const [latestImageLowUrl, setLatestImageLowUrl] = useState<string>("");
     const [pro, setPro] = useState(false);
     const [uploading, setUploading] = useState(false);
+    const [loading, setLoading] = useState(false);
 
     const uploaded = (event: React.ChangeEvent<HTMLInputElement>) => {
       const fileInput = event.target;
@@ -34,6 +36,7 @@ const Editor = () => {
       const uploadImageToServer = async () => {
           try {
               setUploading(true);
+              setLoading(true);
               const response = await uploadImage(file); 
               const { status, image_url } = response;
               if (status === "1"){
@@ -51,6 +54,7 @@ const Editor = () => {
     };
 
     const renderCanvas = (image_high_url: any, image_low_url?: any) => {
+      setLoading(true);
       const canvas = canvasRef.current;
       if (!canvas) return;
       const ctx = canvas.getContext('2d');
@@ -104,6 +108,7 @@ const Editor = () => {
                   ctx.drawImage(img, 0, 0, newWidth, newHeight);
 
                   setProcessing(false);
+                  setLoading(false);
               };
           };
           loadImage();
@@ -202,20 +207,24 @@ const Editor = () => {
   const handleDownloadHighClick = async () => {
     try {
       if (pro) {
-        if (!latestImageHighUrl) return;
-        await fetch(latestImageHighUrl)
-        .then(response => response.blob())
-        .then(blob => {
-          const url = window.URL.createObjectURL(blob);
-          const a = document.createElement('a');
-          const fileName = latestImageHighUrl.substring(latestImageHighUrl.lastIndexOf('/') + 1);
-          a.href = url;
-          a.download = fileName;
-          document.body.appendChild(a);
-          a.click();
-          document.body.removeChild(a);
-        })
-        .catch(error => console.error('Error downloading image:', error));
+        const response = await updatePro(token);
+        const { status, msg, effective } = response;
+        if (status === "1") {
+          if (!latestImageHighUrl) return;
+          await fetch(latestImageHighUrl)
+          .then(response => response.blob())
+          .then(blob => {
+            const url = window.URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            const fileName = latestImageHighUrl.substring(latestImageHighUrl.lastIndexOf('/') + 1);
+            a.href = url;
+            a.download = fileName;
+            document.body.appendChild(a);
+            a.click();
+            document.body.removeChild(a);
+          })
+          .catch(error => console.error('Error downloading image:', error));
+        }
       } else {
         const pro_modal = document.getElementById('pro_modal') as HTMLDialogElement | null;
         if (pro_modal) {
@@ -323,7 +332,8 @@ const Editor = () => {
               />
           </div>
         </div>
-      {/* <button onClick={sendToBackend}>Send to Backend</button> */}
+        
+        {loading && <ScaleLoaderComponent />}
     </div>
   );
 };

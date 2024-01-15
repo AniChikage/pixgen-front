@@ -66,7 +66,7 @@ function Nav () {
     }
 
     return (
-        <header className="fixed flex flex-wrap h-14 sm:justify-start sm:flex-nowrap z-50 w-full bg-black border-b border-gray-900 text-sm py-3 sm:py-0 light:bg-gray-800 light:border-gray-700">
+        <header className="fixed flex flex-wrap h-14 sm:justify-start sm:flex-nowrap z-50 w-full bg-white/[.6] backdrop-blur-lg text-sm py-3 sm:py-0 light:bg-gray-800 light:border-gray-700">
             <nav className="relative max-w-[85rem] w-full mx-auto px-4 sm:flex sm:items-center sm:justify-between sm:px-6 lg:px-8" aria-label="Global">
                 <div id="navbar-collapse-with-animation" className="hs-collapse hidden overflow-hidden transition-all duration-300 basis-full grow sm:block">
                 <div className="flex justify-start flex-col gap-y-4 gap-x-0 mt-5 sm:flex-row sm:items-center sm:gap-y-0 sm:gap-x-3 sm:mt-0 sm:ps-7">

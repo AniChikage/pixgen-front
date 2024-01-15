@@ -35,7 +35,7 @@ export default function Tools() {
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
             <a className="group hover:bg-gray-100 rounded-xl p-5 transition-all light:hover:bg-white/[.05]" href="/blur">
             <div className="aspect-w-16 aspect-h-10">
-                <Image className="w-full object-cover rounded-xl h-64" src={BlurImage} width={200} height={100} alt="Image Description" />
+                <Image className="w-full object-cover rounded-xl h-64" src={BlurImage} alt="Image Description" />
             </div>
             <h3 className="mt-5 text-xl text-gray-800 light:text-gray-300 light:hover:text-white">
                 模糊背景
@@ -48,7 +48,7 @@ export default function Tools() {
 
             <a className="group hover:bg-gray-100 rounded-xl p-5 transition-all light:hover:bg-white/[.05]" href="/erase">
             <div className="aspect-w-16 aspect-h-10">
-                <Image className="w-full object-cover rounded-xl h-64" src={RemoveObject} width={200} height={100} alt="Image Description" />
+                <Image className="w-full object-cover rounded-xl h-64" src={RemoveObject}  alt="Image Description" />
             </div>
             <h3 className="mt-5 text-xl text-gray-800 light:text-gray-300 light:hover:text-white">
                 橡皮擦
@@ -59,24 +59,9 @@ export default function Tools() {
             </p>
             </a>
 
-            <a className="group hover:bg-gray-100 rounded-xl p-5 transition-all light:hover:bg-white/[.05]" href="/upscaler">
-            <div className="aspect-w-16 aspect-h-10">
-                <Image className="w-full object-cover rounded-xl h-64" src="https://images.unsplash.com/photo-1657299171054-e679f630a776?ixlib=rb-4.0.3&ixid=MnwxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80" width={200} height={100} alt="Image Description" />
-            </div>
-            <h3 className="mt-5 text-xl text-gray-800 light:text-gray-300 light:hover:text-white">
-                高清修复
-            </h3>
-            <p className="mt-3 inline-flex items-center gap-x-1 text-sm  text-gray-800 light:text-gray-200">
-                扩大、修复模糊图片
-                <svg className="flex-shrink-0 w-4 h-4 transition ease-in-out group-hover:translate-x-1" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="m9 18 6-6-6-6"/></svg>
-            </p>
-            </a>
-        </div>
-
-        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
             <a className="group hover:bg-gray-100 rounded-xl p-5 transition-all light:hover:bg-white/[.05]" href="/#">
             <div className="aspect-w-16 aspect-h-10">
-                <Image className="w-full object-cover rounded-xl h-64" src={RemoveBG} width={200} height={100} alt="Image Description" />
+                <Image className="w-full object-cover rounded-xl h-64" src={RemoveBG} alt="Image Description" />
             </div>
             <h3 className="mt-5 text-xl text-gray-800 light:text-gray-300 light:hover:text-white">
                 消除背景
@@ -87,7 +72,25 @@ export default function Tools() {
             </p>
             </a>
 
-            {/* <a className="group hover:bg-gray-100 rounded-xl p-5 transition-all light:hover:bg-white/[.05]" href="/#">
+            
+        </div>
+
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            <a className="group hover:bg-gray-100 rounded-xl p-5 transition-all light:hover:bg-white/[.05]" href="/#">
+            <div className="aspect-w-16 aspect-h-10">
+                <Image className="w-full object-cover rounded-xl h-64" src="https://images.unsplash.com/photo-1657299171054-e679f630a776?ixlib=rb-4.0.3&ixid=MnwxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80" width={200} height={100} alt="Image Description" />
+            </div>
+            <h3 className="mt-5 text-xl text-gray-800 light:text-gray-300 light:hover:text-white">
+                高清修复（即将推出）
+            </h3>
+            <p className="mt-3 inline-flex items-center gap-x-1 text-sm  text-gray-800 light:text-gray-200">
+                扩大、修复模糊图片
+                <svg className="flex-shrink-0 w-4 h-4 transition ease-in-out group-hover:translate-x-1" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="m9 18 6-6-6-6"/></svg>
+            </p>
+            </a>
+        </div>
+
+        {/* <a className="group hover:bg-gray-100 rounded-xl p-5 transition-all light:hover:bg-white/[.05]" href="/#">
             <div className="aspect-w-16 aspect-h-10 rounded-xl"
                 onMouseEnter={handleMouseEnter}
                 onMouseLeave={handleMouseLeave}
@@ -114,8 +117,6 @@ export default function Tools() {
                 <svg className="flex-shrink-0 w-4 h-4 transition ease-in-out group-hover:translate-x-1" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="m9 18 6-6-6-6"/></svg>
             </p>
             </a> */}
-
-        </div>
 
         </div>
     )

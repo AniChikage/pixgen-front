@@ -2,7 +2,7 @@
 import { useRouter } from 'next/navigation';
 import React, { useState, useRef, useEffect } from 'react';
 
-import { getImage, erase, checkPro } from '@/api/apis';
+import { getImage, erase, checkPro, updatePro } from '@/api/apis';
 
 import { ArrowLeftIcon, ArrowUturnLeftIcon } from '@heroicons/react/24/outline';
 
@@ -341,20 +341,26 @@ const Editor = () => {
   const handleDownloadHighClick = async () => {
     try {
       if (pro) {
-        if (!latestImageHighUrl) return;
-        await fetch(latestImageHighUrl)
-        .then(response => response.blob())
-        .then(blob => {
-          const url = window.URL.createObjectURL(blob);
-          const a = document.createElement('a');
-          const fileName = latestImageHighUrl.substring(latestImageHighUrl.lastIndexOf('/') + 1);
-          a.href = url;
-          a.download = fileName;
-          document.body.appendChild(a);
-          a.click();
-          document.body.removeChild(a);
-        })
-        .catch(error => console.error('Error downloading image:', error));
+        const token = localStorage.getItem('token');
+        if (!token) return;
+        const response = await updatePro(token);
+        const { status, msg, effective } = response;
+        if (status === "1") {
+          if (!latestImageHighUrl) return;
+          await fetch(latestImageHighUrl)
+          .then(response => response.blob())
+          .then(blob => {
+            const url = window.URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            const fileName = latestImageHighUrl.substring(latestImageHighUrl.lastIndexOf('/') + 1);
+            a.href = url;
+            a.download = fileName;
+            document.body.appendChild(a);
+            a.click();
+            document.body.removeChild(a);
+          })
+          .catch(error => console.error('Error downloading image:', error));
+        }
       } else {
         const pro_modal = document.getElementById('pro_modal') as HTMLDialogElement | null;
         if (pro_modal) {

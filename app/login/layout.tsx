@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 // import { Inter } from 'next/font/google'
 import '@/styles/globals.css'
 
+import Script from 'next/script';
 import Nav from '@/components/header/Nav'
 import PrelineScript from '@/components/PrelineScript'
 
@@ -21,6 +22,10 @@ export default function RootLayout({
     <html lang="en">
       <body>
         {children}
+        <Script
+          src="https://hm.baidu.com/hm.js?7ca9eaee1837bb42e470f1949560a9fa"
+          strategy="beforeInteractive"
+        />
       </body>
       <PrelineScript />
     </html>

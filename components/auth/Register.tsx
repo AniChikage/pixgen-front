@@ -114,10 +114,10 @@ export default function Register() {
 
 
     return (
-        <section className="border-red-500 bg-slate-50 min-h-screen flex items-center justify-center" >
+        <section className="border-red-500 bg-[url('https://preline.co/assets/svg/examples/squared-bg-element.svg')] min-h-screen flex items-center justify-center" >
             <div className="bg-gray-100 bg-opacity-5 w-128 p-5 flex rounded-2xl shadow-lg max-w-3xl">
             <div className="md:w-full px-5">
-                <h2 className="text-2xl font-bold text-[#002D74] text-center">注册</h2>
+                <h2 className="text-2xl font-bold text-[#002D74] text-center">注册PIXGEN</h2>
                 <p className="text-sm mt-4 text-[#002D74]"></p>
                 <form className="mt-6" action="#" method="POST">
                 <div>
@@ -164,7 +164,7 @@ export default function Register() {
                     </button>
                 </div>
 
-                <button type="button" className="w-full block bg-blue-500 hover:bg-blue-400 focus:bg-blue-400 text-white font-semibold rounded-lg
+                <button type="button" className="w-full block bg-blue-500 duration-200 hover:bg-blue-400 focus:bg-blue-400 text-white font-semibold rounded-lg
                         px-4 py-3 mt-6"
                     onClick={goRegister}
                 >
@@ -174,7 +174,7 @@ export default function Register() {
 
                 <div className="text-sm flex justify-between items-center mt-3">
                 <p className="text-slate-800"></p>
-                <button className="py-2 px-5 ml-3 bg-white border rounded-xl hover:scale-110 duration-300 border-blue-400 text-slate-800 " onClick={goLogin}>登录</button>
+                <button className="py-2 px-5 ml-3 bg-white border rounded-xl hover:bg-blue-400 hover:text-white duration-200 border-blue-400 text-slate-800 " onClick={goLogin}>登录</button>
                 </div>
             </div>
 

@@ -1,7 +1,88 @@
+"use client";
+import { useState } from "react";
+import { useRouter } from 'next/navigation';
+import { createOrder } from "@/api/apis"
 
 function Price() {
+
+    const router = useRouter();
+    const [price, setPrice] = useState("0");
+    const [subscription, setSubscription] = useState("");
+
+    const doCreateOrderAlipay = async() => {
+        try {
+            const token = localStorage.getItem("token");
+            if (!token) {
+                router.push("/login");
+            }
+            else {
+                console.log('create order');
+                const response = await createOrder(token, price);
+                const { status, msg, url } = response;
+                if (status === "1") {
+                    window.open(url, '_blank');
+                }
+            }
+        } catch (error) {
+            console.error(error);
+        }
+    };
+
+    const payTrial = async() => {
+        const pay_modal = document.getElementById('pay_modal')
+        if (!pay_modal) return;
+        setPrice("0.01");
+        setSubscription("试用");
+        pay_modal.showModal();
+    };
+
+    const payFlexible = async() => {
+        const pay_modal = document.getElementById('pay_modal')
+        if (!pay_modal) return;
+        setPrice("0.02");
+        setSubscription("灵活");
+        pay_modal.showModal();
+    };
+
+    const payPlus = async() => {
+        const pay_modal = document.getElementById('pay_modal')
+        if (!pay_modal) return;
+        setPrice("0.03");
+        setSubscription("月付");
+        pay_modal.showModal();
+    };
+
+
     return (
         <div className="max-w-[85rem] py-10 px-4 sm:px-6 lg:px-8 mx-auto">
+            
+            <dialog id="pay_modal" className="modal">
+            <div className="modal-box bg-white w-96">
+                <div className="modal-action items-center justify-center flex pb-8">
+                    <h3 className="font-bold text-lg text-black">{subscription}</h3>
+                </div>
+                
+                <div className="flex justify-center items-center">
+                    <button type="button" className="hover:scale-105 duration-100 px-3"
+                      onClick={doCreateOrderAlipay}
+                    >
+                    <svg viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="8489" width="69" height="69"><path d="M1024.0512 701.0304V196.864A196.9664 196.9664 0 0 0 827.136 0H196.864A196.9664 196.9664 0 0 0 0 196.864v630.272A196.9152 196.9152 0 0 0 196.864 1024h630.272a197.12 197.12 0 0 0 193.8432-162.0992c-52.224-22.6304-278.528-120.32-396.4416-176.64-89.7024 108.6976-183.7056 173.9264-325.3248 173.9264s-236.1856-87.2448-224.8192-194.048c7.4752-70.0416 55.552-184.576 264.2944-164.9664 110.08 10.3424 160.4096 30.8736 250.1632 60.5184 23.1936-42.5984 42.496-89.4464 57.1392-139.264H248.064v-39.424h196.9152V311.1424H204.8V267.776h240.128V165.632s2.1504-15.9744 19.8144-15.9744h98.4576V267.776h256v43.4176h-256V381.952h208.8448a805.9904 805.9904 0 0 1-84.8384 212.6848c60.672 22.016 336.7936 106.3936 336.7936 106.3936zM283.5456 791.6032c-149.6576 0-173.312-94.464-165.376-133.9392 7.8336-39.3216 51.2-90.624 134.4-90.624 95.5904 0 181.248 24.4736 284.0576 74.5472-72.192 94.0032-160.9216 150.016-253.0816 150.016z" fill="#009FE8" p-id="8490"></path></svg>
+                    </button>
+                    <button type="button" className="hover:scale-105 duration-100 px-3"
+                    >
+                    <svg viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="10372" width="75" height="75"><path d="M849.92 51.2H174.08c-67.8656 0-122.88 55.0144-122.88 122.88v675.84c0 67.8656 55.0144 122.88 122.88 122.88h675.84c67.8656 0 122.88-55.0144 122.88-122.88V174.08c0-67.8656-55.0144-122.88-122.88-122.88z m-337.92 701.76768a363.2896 363.2896 0 0 1-100.27008-14.03904 30.99136 30.99136 0 0 0-9.03168-1.35168c-5.89824 0-11.25376 1.80224-16.31232 4.73088l-67.25632 38.81984c-1.87392 1.08032-3.6864 1.89952-5.9136 1.89952a10.24 10.24 0 0 1-10.24512-10.24c0-2.52928 1.01376-5.05856 1.65888-7.48032l13.84448-51.64032c0.5888-2.16064 1.0752-4.2496 1.0752-6.51776a20.48512 20.48512 0 0 0-8.59648-16.6912C246.18496 643.53792 204.8 574.11072 204.8 496.96256c0-141.38368 137.53344-256 307.2-256 103.68 0 195.30752 42.8544 250.9312 108.41088l-310.35904 138.1376a30.4896 30.4896 0 0 1-27.28448-3.1232l-65.99168-46.98112a10.24 10.24 0 0 0-16.36864 8.21248c0 1.46432 0.37376 2.9696 0.97792 4.31104l55.92576 122.71104 1.34144 2.94912a20.44928 20.44928 0 0 0 27.07968 8.2688l2.24256-1.30048 353.71008-204.21632C806.51264 413.81376 819.2 454.14912 819.2 496.96256c0 141.3888-137.53856 256.00512-307.2 256.00512z" fill="#24B340" p-id="10373"></path></svg>
+                    </button>
+                </div>
+                <div className="modal-action items-center justify-center flex">
+                <form method="dialog">
+                    <button className="btn bg-white hover:bg-white border-none shadow-none hover:scale-105 duration-105">
+                    <svg viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="12184" width="30" height="30"><path d="M512 512m-448 0a448 448 0 1 0 896 0 448 448 0 1 0-896 0Z" fill="#5090F1" p-id="12185"></path><path d="M512 455.431l169.706-169.705a8 8 0 0 1 11.313 0l45.255 45.255a8 8 0 0 1 0 11.313L568.57 512l169.705 169.706a8 8 0 0 1 0 11.313l-45.255 45.255a8 8 0 0 1-11.313 0L512 568.57 342.294 738.274a8 8 0 0 1-11.313 0l-45.255-45.255a8 8 0 0 1 0-11.313L455.43 512 285.726 342.294a8 8 0 0 1 0-11.313l45.255-45.255a8 8 0 0 1 11.313 0L512 455.43z" fill="#FFFFFF" p-id="12186"></path></svg>
+                    </button>
+                </form>
+                </div>
+            </div>
+            </dialog>
+
             <div className="max-w-2xl mx-auto text-center mb-10 lg:mb-14 mt-10">
                 <h2 className="text-2xl font-bold md:text-4xl md:leading-tight text-black light:text-black">定价</h2>
                 <p className="mt-1 text-gray-600 light:text-gray-400">选择适合您的付费计划</p>
@@ -103,9 +184,11 @@ function Price() {
                     </li>
                 </ul>
 
-                <a className="mt-5 py-3 px-4 inline-flex justify-center items-center gap-x-2 text-sm font-semibold rounded-lg border border-transparent bg-blue-100 text-blue-800 hover:bg-blue-200 disabled:opacity-50 disabled:pointer-events-none light:hover:bg-blue-900 light:text-blue-400 light:focus:outline-none light:focus:ring-1 light:focus:ring-gray-600" href="#">
+                <button className="mt-5 py-3 px-4 inline-flex justify-center items-center gap-x-2 text-sm font-semibold rounded-lg border border-transparent bg-blue-100 text-blue-800 hover:bg-blue-200 disabled:opacity-50 disabled:pointer-events-none light:hover:bg-blue-900 light:text-blue-400 light:focus:outline-none light:focus:ring-1 light:focus:ring-gray-600"
+                  onClick={payTrial}
+                >
                     订 阅
-                </a>
+                </button>
                 </div>
                 
 
@@ -148,14 +231,16 @@ function Price() {
                     </li>
                 </ul>
 
-                <a className="mt-5 py-3 px-4 inline-flex justify-center items-center gap-x-2 text-sm font-semibold rounded-lg border border-transparent bg-blue-600 text-white hover:bg-blue-700 disabled:opacity-50 disabled:pointer-events-none light:focus:outline-none light:focus:ring-1 light:focus:ring-gray-600" href="https://github.com/htmlstreamofficial/preline/tree/main/examples/html">
+                <button className="mt-5 py-3 px-4 inline-flex justify-center items-center gap-x-2 text-sm font-semibold rounded-lg border border-transparent bg-blue-600 text-white hover:bg-blue-700 disabled:opacity-50 disabled:pointer-events-none light:focus:outline-none light:focus:ring-1 light:focus:ring-gray-600"
+                  onClick={payFlexible}
+                >
                     订 阅
-                </a>
+                </button>
                 </div>
                 
                 
                 <div className="flex flex-col border border-gray-200 text-center rounded-xl p-8 light:border-gray-700">
-                <h4 className="font-medium text-lg text-gray-800 light:text-gray-200">长期</h4>
+                <h4 className="font-medium text-lg text-gray-800 light:text-gray-200">月付</h4>
                 <span className="mt-5 font-bold text-5xl text-gray-800 light:text-gray-200">
                     {/* <span className="font-bold text-2xl -me-2">$</span> */}
                     9.9¥
@@ -191,12 +276,15 @@ function Price() {
                     </li>
                 </ul>
 
-                <a className="mt-5 py-3 px-4 inline-flex justify-center items-center gap-x-2 text-sm font-semibold rounded-lg border border-transparent bg-blue-100 text-blue-800 hover:bg-blue-200 disabled:opacity-50 disabled:pointer-events-none light:hover:bg-blue-900 light:text-blue-400 light:focus:outline-none light:focus:ring-1 light:focus:ring-gray-600" href="#">
+                <button className="mt-5 py-3 px-4 inline-flex justify-center items-center gap-x-2 text-sm font-semibold rounded-lg border border-transparent bg-blue-100 text-blue-800 hover:bg-blue-200 disabled:opacity-50 disabled:pointer-events-none light:hover:bg-blue-900 light:text-blue-400 light:focus:outline-none light:focus:ring-1 light:focus:ring-gray-600" 
+                  onClick={payPlus}
+                >
                     订 阅
-                </a>
+                </button>
                 </div>
                 
             </div>
+
         </div>
     )
 }

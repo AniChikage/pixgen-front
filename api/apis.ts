@@ -26,6 +26,28 @@ export async function loginUser(
     }
 }
 
+export async function wxLoginUser(
+  code: string,
+) {
+  const fd = new FormData()
+  fd.append('code', code)
+
+  try {
+    const res = await fetch(`${API_ENDPOINT}/api/user/wx_login_user`, {
+      method: 'POST',
+      body: fd,
+      mode: 'cors',
+    })
+    console.log(res)
+    if (res.ok) {
+      const data = await res.json();
+      return data;
+    }
+  } catch (error) {
+    throw new Error(`login failed: ${error}`)
+  }
+}
+
 export async function sendValidationCode(
   email: string
 ) {
@@ -117,6 +139,81 @@ export async function checkPro(
     }
   } catch (error) {
     throw new Error(`login failed: ${error}`)
+  }
+}
+
+
+export async function updatePro(
+  token: string,
+) {
+  try {
+    const res = await fetch(`${API_ENDPOINT}/api/user/update_pro`, {
+      method: 'POST',
+      mode: 'cors',
+      headers: {
+        'Authorization': 'Bearer ' + token
+      }
+    })
+    console.log(res)
+    if (res.ok) {
+      const data = await res.json();
+      return data;
+    }
+  } catch (error) {
+    throw new Error(`update pro failed: ${error}`)
+  }
+}
+
+
+export async function listOrders(
+  token: string,
+  page: number
+) {
+  const fd = new FormData()
+  fd.append('page', page.toString())
+
+  try {
+    const res = await fetch(`${API_ENDPOINT}/api/order/list_orders`, {
+      method: 'POST',
+      mode: 'cors',
+      headers: {
+        'Authorization': 'Bearer ' + token
+      },
+      body: fd,
+    })
+    console.log(res)
+    if (res.ok) {
+      const data = await res.json();
+      return data;
+    }
+  } catch (error) {
+    throw new Error(`list orders failed: ${error}`)
+  }
+}
+
+export async function createOrder(
+  token: string,
+  amount: string
+) {
+  const fd = new FormData()
+  fd.append('amount', amount)
+
+  try {
+    const res = await fetch(`${API_ENDPOINT}/api/order/create_order`, {
+      method: 'POST',
+      mode: 'cors',
+      headers: {
+        'Authorization': 'Bearer ' + token
+      },
+      body: fd,
+    })
+    console.log(res)
+    if (res.ok) {
+      const data = await res.json();
+      return data;
+    }
+  } catch (error) {
+    throw new Error(`create order failed: ${error}`)
   }
 }
 
@@ -233,7 +330,9 @@ export async function upscaler(
       console.log(errMsg);
     }
   } catch (error) {
+    console.log(error);
     throw new Error(`upsaler failed: ${error}`)
+    
   }
 }
 

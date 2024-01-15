@@ -187,6 +187,7 @@ const Editor = () => {
       console.log("dddd");
       if (lastImage) {
         const response = await upscaler(token, lastImage);
+        console.log(response);
         const { status, image_high_url, image_low_url } = response;
         if (status === "1") {
           renderCanvas(image_high_url, image_low_url);
@@ -251,9 +252,7 @@ const Editor = () => {
   }
 
   return (
-    <div className='w-full h-screen flex justify-center items-start' 
-        style={{ background: "linear-gradient(to right, #000 1px, transparent 1px), linear-gradient(to bottom, #000 1px, transparent 1px)", backgroundSize: "20px 20px" }}
-    >
+    <div className='w-full h-screen flex justify-center items-start bg-black'>
         <header className="fixed flex items-center flex-wrap h-14 sm:justify-start sm:flex-nowrap z-50 w-full bg-black text-sm py-3 sm:py-0 light:bg-gray-800 ">
             <nav className="relative w-full pr-4 sm:flex sm:items-center sm:justify-between" aria-label="Global">
                 <div id="navbar-collapse-with-animation" className="hs-collapse hidden overflow-hidden transition-all duration-300 w-40 grow sm:block">

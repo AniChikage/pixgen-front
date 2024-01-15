@@ -1,7 +1,7 @@
 
 function FAQ () {
     return (
-        <div className="max-w-[85rem] px-4 py-10 sm:px-6 lg:px-8 lg:py-14 mx-auto">
+        <div className="max-w-[85rem] px-4 py-10 sm:px-6 lg:px-8 lg:py-14 mx-auto bg-[url('https://preline.co/assets/svg/examples/squared-bg-element.svg')]">
         <div className="max-w-2xl mx-auto text-center mb-10 lg:mb-14">
             <h2 className="text-2xl font-bold md:text-3xl md:leading-tight text-gray-800 light:text-gray-200">
             常见问题

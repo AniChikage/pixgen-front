@@ -3,13 +3,13 @@ import React, { useEffect, useLayoutEffect, useState } from 'react';
 import Link from 'next/link'
 import Image from 'next/image'
 import Logo from '../../public/logo.png'
-import Avart from '../../public/avart.png'
+import Avart from '../../public/avater.png'
 
 import { userProfile } from '@/api/apis';
 
 function Nav () {
 
-    const [loggedIn, setLoggedIn] = useState(false);
+    const [loggedIn, setLoggedIn] = useState(true);
     const [username, setUsername] = useState('');
 
     useEffect(() => {
@@ -50,7 +50,7 @@ function Nav () {
     }
 
     return (
-        <header className="fixed flex flex-wrap h-14 sm:justify-start sm:flex-nowrap z-50 w-full bg-white bg-opacity-90 border-b border-gray-200 text-sm py-3 sm:py-0 light:bg-gray-800 light:border-gray-700">
+        <header className="fixed flex flex-wrap h-14 sm:justify-start sm:flex-nowrap z-50 w-full bg-white/[.6] backdrop-blur-lg text-sm py-3 sm:py-0 light:bg-gray-800 light:border-gray-700">
             <nav className="relative max-w-[85rem] w-full mx-auto px-4 sm:flex sm:items-center sm:justify-between sm:px-6 lg:px-8" aria-label="Global">
                 <div className="flex items-center justify-between">
                 <a className="flex-none text-xl font-semibold text-black" href="/" aria-label="Brand">
@@ -70,12 +70,14 @@ function Nav () {
                 <div id="navbar-collapse-with-animation" className="hs-collapse hidden overflow-hidden transition-all duration-300 basis-full grow sm:block">
                 <div className="flex flex-col gap-y-4 gap-x-0 mt-5 sm:flex-row sm:items-center sm:gap-y-0 sm:gap-x-7 sm:mt-0 sm:ps-7">
                     <a className="font-medium text-base text-gray-800 hover:text-blue-400 sm:py-6 light:text-gray-400 light:hover:text-gray-500" href="/price">价格</a>
+                    
 
                     <div className="hs-dropdown [--strategy:static] md:[--strategy:absolute] [--adaptive:none] md:[--trigger:hover] py-3 md:py-4">
                         <button type="button" className="flex items-center w-full text-gray-800 hover:text-blue-400 font-medium light:text-gray-400 light:hover:text-blue-500 light:focus:outline-none light:focus:ring-1 light:focus:ring-gray-600 text-base">
                             工具
                             <svg className="flex-shrink-0 ms-2 w-4 h-4" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="m6 9 6 6 6-6"/></svg>
                         </button>
+
 
                         <div className="hs-dropdown-menu transition-[opacity,margin] duration-[0.1ms] md:duration-[150ms] hs-dropdown-open:opacity-100 opacity-0 w-2/3 hidden z-10 top-full start-0 min-w-[15rem] bg-white md:shadow-2xl rounded-lg py-2 md:p-4 light:bg-gray-800 light:divide-gray-700 before:absolute before:-top-5 before:start-0 before:w-full before:h-5">
                             <div className="md:grid md:grid-cols-2 lg:grid-cols-2 gap-4">
@@ -154,14 +156,14 @@ function Nav () {
                     {
                         loggedIn? 
                         <div className="hs-dropdown inline-flex ml-auto">
-                            <button id="hs-dropdown-custom-trigger" type="button" className="hs-dropdown-toggle py-1 ps-1 pe-3 inline-flex items-center gap-x-2 text-sm font-semibold rounded-full bg-transparent text-gray-800  hover:bg-gray-50 disabled:opacity-50 disabled:pointer-events-none light:bg-transparent light:text-white light:hover:bg-gray-800 light:focus:outline-none light:focus:ring-1 light:focus:ring-gray-600">
+                            <button id="hs-dropdown-custom-trigger" type="button" className="hs-dropdown-toggle py-1 ps-1 pe-3 w-24 inline-flex items-center justify-center gap-x-2 text-sm font-semibold rounded-full bg-transparent text-gray-800  hover:bg-gray-50 disabled:opacity-50 disabled:pointer-events-none light:bg-transparent light:text-white light:hover:bg-gray-800 light:focus:outline-none light:focus:ring-1 light:focus:ring-gray-600">
                                 <Image className="w-8 h-8 rounded-full" width={20} height={20} src={Avart.src} alt="Maria" />
-                                <span className="text-gray-600 font-medium truncate max-w-[7.5rem] lgiht:text-gray-400">{username}</span>
+                                {/* <span className="text-gray-600 font-medium truncate max-w-[7.5rem] lgiht:text-gray-400">{username}</span> */}
                                 <svg className="hs-dropdown-open:rotate-180 w-4 h-4" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="m6 9 6 6 6-6"/></svg>
                             </button>
 
                             <div className="hs-dropdown-menu transition-[opacity,margin] duration hs-dropdown-open:opacity-100 opacity-0 hidden min-w-[10rem] bg-white shadow-md rounded-lg p-2 mt-2 light:bg-gray-800 light:border light:border-gray-700" aria-labelledby="hs-dropdown-custom-trigger">
-                                <a className="flex items-center gap-x-3.5 py-2 px-3 rounded-lg text-sm text-gray-800 hover:bg-gray-100 focus:outline-none focus:bg-gray-100 light:text-gray-400 light:hover:bg-gray-700 light:hover:text-gray-300 light:focus:bg-gray-700" href="/#">
+                                <a className="flex items-center gap-x-3.5 py-2 px-3 rounded-lg text-sm text-gray-800 hover:bg-gray-100 focus:outline-none focus:bg-gray-100 light:text-gray-400 light:hover:bg-gray-700 light:hover:text-gray-300 light:focus:bg-gray-700" href="/profile">
                                 个人资料
                                 </a>
                                 <a className="flex items-center gap-x-3.5 py-2 px-3 rounded-lg text-sm text-gray-800 hover:bg-gray-100 focus:outline-none focus:bg-gray-100 light:text-gray-400 light:hover:bg-gray-700 light:hover:text-gray-300 light:focus:bg-gray-700" href="/#" onClick={logout}>

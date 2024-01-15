@@ -2,8 +2,8 @@ import { ReactCompareSlider, ReactCompareSliderImage } from 'react-compare-slide
 
 export default function Introdcution() {
     return (
-        <div className="relative overflow-hidden"
-            style={{ background: "radial-gradient(circle, #6F6F6F 1px, transparent 1px)", backgroundSize: "30px 30px" }}
+        <div className="relative overflow-hidden bg-[url('https://preline.co/assets/svg/examples/polygon-bg-element.svg')]"
+            // style={{ background: "radial-gradient(circle, #6F6F6F 1px, transparent 1px)", backgroundSize: "30px 30px" }}
         >
         <div className="max-w-[85rem] mx-auto px-4 sm:px-6 lg:px-8 py-16">
             <div className="max-w-2xl text-center mx-auto mt-10">
