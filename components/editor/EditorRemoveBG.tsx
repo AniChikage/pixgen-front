@@ -211,6 +211,7 @@ const Editor = () => {
         const response = await updatePro(token);
         const { status, msg, effective } = response;
         console.log(status)
+        console.log(latestImageHighUrl)
         if (!latestImageHighUrl) return;
         await fetch(latestImageHighUrl)
         .then(response => response.blob())

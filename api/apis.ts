@@ -314,6 +314,9 @@ export async function removeBG(
       // headers: {
       //   'Content-Type': 'multipart/form-data',
       // },
+      headers: {
+        'Authorization': 'Bearer ' + token
+      },
       body: fd,
     })
     console.log(res)
