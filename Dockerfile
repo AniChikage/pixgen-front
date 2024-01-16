@@ -1,7 +1,7 @@
 FROM node:21.5
 
 WORKDIR /app
-COPY * ./
+COPY . .
 
 RUN npm install 
 RUN npm run build
