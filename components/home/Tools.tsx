@@ -59,7 +59,7 @@ export default function Tools() {
             </p>
             </a>
 
-            <a className="group hover:bg-gray-100 rounded-xl p-5 transition-all light:hover:bg-white/[.05]" href="/#">
+            <a className="group hover:bg-gray-100 rounded-xl p-5 transition-all light:hover:bg-white/[.05]" href="/removebg">
             <div className="aspect-w-16 aspect-h-10">
                 <Image className="w-full object-cover rounded-xl h-64" src={RemoveBG} alt="Image Description" />
             </div>

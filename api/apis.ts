@@ -300,6 +300,36 @@ export async function erase(
   }
 }
 
+export async function removeBG(
+  token: string,
+  image: File
+) {
+  try {
+    const fd = new FormData()
+    fd.append('image', image)
+
+    const res = await fetch(`${API_ENDPOINT}/api/plugin/remove_bg`, {
+      method: 'POST',
+      mode: 'cors',
+      // headers: {
+      //   'Content-Type': 'multipart/form-data',
+      // },
+      body: fd,
+    })
+    console.log(res)
+    if (res.ok) {
+      const data = await res.json();
+      console.log(data)
+      return data;
+    } else {
+      const errMsg = await res.text()
+      console.log(errMsg);
+    }
+  } catch (error) {
+    throw new Error(`removeBG failed: ${error}`)
+  }
+}
+
 
 export async function upscaler(
   token: string,
