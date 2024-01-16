@@ -3,7 +3,7 @@ import { useRouter } from 'next/navigation';
 import React, { useState, useRef, useEffect } from 'react';
 import ScaleLoaderComponent from '@/components/loading/ScaleLoader';
 
-import { getImage, blur, checkPro, uploadImage, updatePro } from '@/api/apis';
+import { getImage, removeBG, checkPro, uploadImage, updatePro } from '@/api/apis';
 
 import { ArrowLeftIcon, FolderOpenIcon } from '@heroicons/react/24/outline';
 
@@ -187,11 +187,11 @@ const Editor = () => {
     router.push('/blur');
   }
 
-  const blurImage = async(event: { preventDefault: () => void; }) => {
+  const doRemoveBG = async(event: { preventDefault: () => void; }) => {
     const canvas = canvasRef.current;
     if (canvas && lastImage){
       setProcessing(true);
-      const response = await blur(token, lastImage);
+      const response = await removeBG(token, lastImage);
       const { status, image_high_url, image_low_url } = response;
       if (status === "1") {
         renderCanvas(image_high_url, image_low_url);
@@ -285,10 +285,10 @@ const Editor = () => {
                       </label>
                     </button>
                     <button type="button" className="py-2 px-4 inline-flex items-center gap-x-2 text-sm font-semibold rounded-lg border border-gray-200 text-gray-500 hover:border-blue-600 hover:text-blue-600 disabled:opacity-50 disabled:pointer-events-none dark:border-gray-700 dark:text-gray-400 dark:hover:text-blue-500 dark:hover:border-blue-600 dark:focus:outline-none dark:focus:ring-1 dark:focus:ring-gray-600"
-                      onClick={blurImage}
+                      onClick={doRemoveBG}
                       disabled={processing || upscaled}
                     >
-                    一键模糊
+                    消除背景
                     </button>
                     <button type="button" className="py-2 px-4 inline-flex items-center gap-x-2 text-sm font-semibold rounded-lg border border-gray-200 text-gray-500 hover:border-blue-600 hover:text-blue-600 disabled:opacity-50 disabled:pointer-events-none dark:border-gray-700 dark:text-gray-400 dark:hover:text-blue-500 dark:hover:border-blue-600 dark:focus:outline-none dark:focus:ring-1 dark:focus:ring-gray-600"
                       disabled={processing}
