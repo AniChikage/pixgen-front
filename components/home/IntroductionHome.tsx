@@ -13,8 +13,8 @@ export default function Introdcution() {
 
             <div className="mt-10 relative max-w-5xl mx-auto">
             <ReactCompareSlider className='w-full h-128 rounded-xl' changePositionOnHover={true}
-                itemOne={<ReactCompareSliderImage src="https://pixgen.pro:8010/images/erase_object_diff_2.jpg" alt="Image one" />}
-                itemTwo={<ReactCompareSliderImage src="https://pixgen.pro:8010/images/erase_object_diffd_2.jpg" alt="Image two" />}
+                itemOne={<ReactCompareSliderImage src="https://pixgen.pro/home/erase_object_diff_2.webp" alt="Image one" />}
+                itemTwo={<ReactCompareSliderImage src="https://pixgen.pro/home/erase_object_diffd_2.webp" alt="Image two" />}
                 />
             </div>
         </div>

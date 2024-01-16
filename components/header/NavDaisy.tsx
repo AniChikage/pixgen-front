@@ -4,13 +4,13 @@ import Link from 'next/link'
 import Image from 'next/image'
 import Logo from '../../public/logo.png'
 import Avart from '../../public/avater.png'
-import DefaultIcon from "@/public/default.jpg"
+import DefaultIcon from "@/public/default_small.jpg"
 
 import { userProfile, wxLoginUser } from '@/api/apis';
 
 function Nav () {
 
-    const [loggedIn, setLoggedIn] = useState("0");
+    const [loggedIn, setLoggedIn] = useState("-1");
     const [username, setUsername] = useState('');
 
     useEffect(() => {
@@ -120,38 +120,46 @@ function Nav () {
                     <li><a className='text-black text-base' href="/price">价格</a></li>
                     </ul>
                 </div>
-                {
-                    loggedIn === "1" &&
-                    <div className="dropdown dropdown-end items-center justify-end w-10">
-                        <div tabIndex={0} role="button" className="btn btn-ghost btn-circle avatar">
-                            <div className="w-10 rounded-full">
-                            <Image alt="" src={DefaultIcon} />
+                <div className='w-14 flex items-center justify-between'>
+                    {
+                        loggedIn === "1" &&
+                        <div className="dropdown dropdown-end items-center justify-end w-10">
+                            <div tabIndex={0} role="button" className="btn btn-ghost btn-circle avatar">
+                                <div className="w-10 rounded-full">
+                                <Image alt="" src={DefaultIcon} />
+                                </div>
                             </div>
+                            <ul className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-white rounded-box w-48">
+                                <li>
+                                    <a className="flex items-center gap-x-3.5 py-2 px-3 rounded-lg text-sm text-gray-800 hover:bg-gray-100 focus:outline-none focus:bg-gray-100 light:text-gray-400 light:hover:bg-gray-700 light:hover:text-gray-300 light:focus:bg-gray-700" href="/profile">
+                                    个人资料
+                                    </a>
+                                </li>
+                                <li>
+                                    <a className="flex items-center gap-x-3.5 py-2 px-3 rounded-lg text-sm text-gray-800 hover:bg-gray-100 focus:outline-none focus:bg-gray-100 light:text-gray-400 light:hover:bg-gray-700 light:hover:text-gray-300 light:focus:bg-gray-700" href="/#" onClick={logout}>
+                                    退出
+                                    </a>
+                                </li>
+                            </ul>
                         </div>
-                        <ul className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-white rounded-box w-48">
-                            <li>
-                                <a className="flex items-center gap-x-3.5 py-2 px-3 rounded-lg text-sm text-gray-800 hover:bg-gray-100 focus:outline-none focus:bg-gray-100 light:text-gray-400 light:hover:bg-gray-700 light:hover:text-gray-300 light:focus:bg-gray-700" href="/profile">
-                                个人资料
-                                </a>
-                            </li>
-                            <li>
-                                <a className="flex items-center gap-x-3.5 py-2 px-3 rounded-lg text-sm text-gray-800 hover:bg-gray-100 focus:outline-none focus:bg-gray-100 light:text-gray-400 light:hover:bg-gray-700 light:hover:text-gray-300 light:focus:bg-gray-700" href="/#" onClick={logout}>
-                                退出
-                                </a>
-                            </li>
-                        </ul>
-                    </div>
-                }
-                {
-                    loggedIn === "0" &&
-                    <div className="flex items-center justify-end w-14">
-                        <a className="flex items-center gap-x-2 font-medium text-gray-500 hover:text-blue-600 light:text-gray-400 light:hover:text-blue-500" href="/login">
-                            <svg className="flex-shrink-0 w-4 h-4" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
-                            登录
-                        </a>
-                    </div>
-                }
-                
+                    }
+                    {
+                        loggedIn === "0" &&
+                        <div className="flex items-center justify-end w-14">
+                            <a className="flex items-center gap-x-2 font-medium text-gray-500 hover:text-blue-600 light:text-gray-400 light:hover:text-blue-500" href="/login">
+                                <svg className="flex-shrink-0 w-4 h-4" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+                                登录
+                            </a>
+                        </div>
+                    }
+                    {
+                        loggedIn === "-1" &&
+                        <div className="flex items-center justify-end w-14">
+                            <a className="flex items-center gap-x-2 font-medium text-gray-500 hover:text-blue-600 light:text-gray-400 light:hover:text-blue-500" href="/#">
+                            </a>
+                        </div>
+                    }
+                </div>  
             </div>
         </div>
     )

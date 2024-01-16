@@ -206,25 +206,25 @@ const Editor = () => {
 
   const handleDownloadHighClick = async () => {
     try {
+      console.log(pro)
       if (pro) {
         const response = await updatePro(token);
         const { status, msg, effective } = response;
-        if (status === "1") {
-          if (!latestImageHighUrl) return;
-          await fetch(latestImageHighUrl)
-          .then(response => response.blob())
-          .then(blob => {
-            const url = window.URL.createObjectURL(blob);
-            const a = document.createElement('a');
-            const fileName = latestImageHighUrl.substring(latestImageHighUrl.lastIndexOf('/') + 1);
-            a.href = url;
-            a.download = fileName;
-            document.body.appendChild(a);
-            a.click();
-            document.body.removeChild(a);
-          })
-          .catch(error => console.error('Error downloading image:', error));
-        }
+        console.log(status)
+        if (!latestImageHighUrl) return;
+        await fetch(latestImageHighUrl)
+        .then(response => response.blob())
+        .then(blob => {
+          const url = window.URL.createObjectURL(blob);
+          const a = document.createElement('a');
+          const fileName = latestImageHighUrl.substring(latestImageHighUrl.lastIndexOf('/') + 1);
+          a.href = url;
+          a.download = fileName;
+          document.body.appendChild(a);
+          a.click();
+          document.body.removeChild(a);
+        })
+        .catch(error => console.error('Error downloading image:', error));
       } else {
         const pro_modal = document.getElementById('pro_modal') as HTMLDialogElement | null;
         if (pro_modal) {

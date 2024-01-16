@@ -115,7 +115,7 @@ export default function Register() {
 
     return (
         <section className="border-red-500 bg-[url('https://preline.co/assets/svg/examples/squared-bg-element.svg')] min-h-screen flex items-center justify-center" >
-            <div className="bg-gray-100 bg-opacity-5 w-128 p-5 flex rounded-2xl shadow-lg max-w-3xl">
+            <div className="bg-gray-100 bg-opacity-50 w-128 p-5 flex rounded-2xl shadow-lg max-w-3xl">
             <div className="md:w-full px-5">
                 <h2 className="text-2xl font-bold text-[#002D74] text-center">注册PIXGEN</h2>
                 <p className="text-sm mt-4 text-[#002D74]"></p>
