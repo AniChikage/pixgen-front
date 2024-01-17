@@ -300,6 +300,40 @@ export async function erase(
   }
 }
 
+
+export async function faceswap(
+  token: string,
+  source: File,
+  target: File
+) {
+  try {
+    const fd = new FormData()
+    fd.append('source', source)
+    fd.append('target', target)
+
+    const res = await fetch(`${API_ENDPOINT}/api/plugin/swap_face`, {
+      method: 'POST',
+      mode: 'cors',
+      headers: {
+        'Authorization': 'Bearer ' + token
+      },
+      body: fd,
+    })
+    console.log(res)
+    if (res.ok) {
+      const data = await res.json();
+      console.log(data)
+      return data;
+    } else {
+      const errMsg = await res.text()
+      console.log(errMsg);
+    }
+  } catch (error) {
+    throw new Error(`upload failed: ${error}`)
+  }
+}
+
+
 export async function removeBG(
   token: string,
   image: File

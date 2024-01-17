@@ -1,7 +1,14 @@
 import { useEffect, useState } from 'react';
+import { useRouter } from "next/navigation"
 import ReactPlayer from 'react-player';
 
+import Image from "next/image"
+
+import FaceSwap from '@/public/home/faceswap.webp'
+
 export default function Introdcution () {
+
+    const router = useRouter();
 
     const [isClient, setIsClient] = useState(false);
     const [hover, setHover] = useState(false);
@@ -10,12 +17,16 @@ export default function Introdcution () {
         setIsClient(true);
     }, []);
 
+    const goEditor = () => {
+         router.push("/faceswap/editor");
+    };
+
     return (
         <div className="max-w-[85rem] mx-auto px-4 sm:px-6 lg:px-8 bg-[url('https://preline.co/assets/svg/examples/polygon-bg-element.svg')]">
         <div className="grid lg:grid-cols-7 lg:gap-x-8 xl:gap-x-12 lg:items-center">
             <div className="lg:col-span-3">
             <h1 className="block font-bold text-gray-800 text-3xl md:text-5xl lg:text-6xl light:text-gray-200">
-                智能橡皮擦
+                一键换脸
                 {/* <span className="bg-clip-text bg-gradient-to-tl from-blue-600 to-violet-600 text-transparent">智能橡皮擦</span> */}
             </h1>
             <p className="mt-3 text-lg text-gray-800 light:text-gray-400"></p>
@@ -61,23 +72,17 @@ export default function Introdcution () {
                 </svg>
                 </div>
             </div>
+            
+            <button type="button" className=" mt-10 py-2 px-4 inline-flex items-center gap-x-2 text-sm font-semibold rounded-lg border border-gray-200 text-black hover:border-blue-600 hover:text-blue-600 disabled:opacity-50 disabled:pointer-events-none light:border-gray-700 light:text-gray-400 light:hover:text-blue-500 light:hover:border-blue-600 light:focus:outline-none light:focus:ring-1 light:focus:ring-gray-600"
+                onClick={goEditor}
+            >
+            尝试一下
+            </button>
+
             </div>
 
-            <div className="lg:col-span-4 lg:mt-20">
-            {/* <Image className="w-full rounded-xl" src={EraseGIF.src} width={300} height={100} alt="" /> */}
-                {
-                    isClient?
-                        <ReactPlayer 
-                        className="rounded-xl overflow-hidden"
-                        url="https://pixgen.pro:8010/images/eraser.mp4"
-                        playing={true} 
-                        loop={true} 
-                        controls={false}
-                        width='100%'
-                        height='100%'
-                    />
-                    : null
-                } 
+            <div className="lg:col-span-4 lg:mt-20 ">
+                <Image src={FaceSwap} className='py-10' ></Image>
             </div>
         </div>
         </div>
