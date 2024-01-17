@@ -125,8 +125,11 @@ const Editor = () => {
               const img = new Image();
               img.src = URL.createObjectURL(blob);;
               img.onload = () => {
-                  const maxCanvasWidth = window.innerWidth * (1 / 3);
-                  const maxCanvasHeight = window.innerHeight * (3 / 8);
+                  // const maxCanvasWidth = window.innerWidth * (1 / 3);
+                  // const maxCanvasHeight = window.innerHeight * (3 / 8);
+
+                  const maxCanvasWidth = 512;
+                  const maxCanvasHeight = 240;
 
                   let newWidth = img.width;
                   let newHeight = img.height;
@@ -176,8 +179,10 @@ const Editor = () => {
               const img = new Image();
               img.src = URL.createObjectURL(blob);;
               img.onload = () => {
-                  const maxCanvasWidth = window.innerWidth * (1 / 3);
-                  const maxCanvasHeight = window.innerHeight * (3 / 8);
+                  // const maxCanvasWidth = window.innerWidth * (1 / 3);
+                  // const maxCanvasHeight = window.innerHeight * (3 / 8);
+                  const maxCanvasWidth = 512;
+                  const maxCanvasHeight = 240;
 
                   let newWidth = img.width;
                   let newHeight = img.height;
@@ -479,7 +484,7 @@ const Editor = () => {
           style={{ background: "radial-gradient(circle, #6F6F6F 1px, transparent 1px)", backgroundSize: "30px 30px" }}
         >
 
-          <div className='flex-1 w-full h-[calc(100%-3.5rem)] mt-14 bg-white bg-opacity-15 rounded-md' >
+          <div className='flex-1 w-full h-[calc(100%-3.5rem)] mt-14' >
             <div className="flex h-1/2 p-4 w-full items-center justify-center">
               {
                 !showCanvasSource && 
@@ -507,7 +512,7 @@ const Editor = () => {
               }
               {
                 showCanvasSource && 
-                <div className="flex relative transition-opacity duration-200 ease-in-out items-center justify-center" style={{ opacity: opacity }}>
+                <div className="flex relative transition-opacity duration-200 ease-in-out items-center justify-center bg-white w-128 h-60 rounded-lg" style={{ opacity: opacity }}>
                   <canvas
                     ref={sourceRef}
                     width={300}
@@ -544,7 +549,7 @@ const Editor = () => {
               }
               {
                 showCanvasTarget && 
-                <div className="flex relative transition-opacity duration-200 ease-in-out items-center justify-center" style={{ opacity: opacity }}>
+                <div className="flex relative transition-opacity duration-200 ease-in-out items-center justify-center bg-white w-128 h-60 rounded-lg" style={{ opacity: opacity }}>
                   <canvas
                     ref={targetRef}
                     width={300}
