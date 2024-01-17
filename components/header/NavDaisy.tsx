@@ -117,7 +117,7 @@ function Nav () {
                         </ul>
                         </details>
                     </li>
-                    <li><a className='text-black text-base' href="/price">价格</a></li>
+                    <li><a className='text-black text-base' href="/price">定价</a></li>
                     </ul>
                 </div>
                 <div className='w-14 flex items-center justify-between'>

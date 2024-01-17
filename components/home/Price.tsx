@@ -31,7 +31,7 @@ function Price() {
     const payTrial = async() => {
         const pay_modal = document.getElementById('pay_modal')
         if (!pay_modal) return;
-        setPrice("0.01");
+        setPrice("1.9");
         setSubscription("试用");
         pay_modal.showModal();
     };
@@ -39,7 +39,7 @@ function Price() {
     const payFlexible = async() => {
         const pay_modal = document.getElementById('pay_modal')
         if (!pay_modal) return;
-        setPrice("0.02");
+        setPrice("4.9");
         setSubscription("灵活");
         pay_modal.showModal();
     };
@@ -47,14 +47,15 @@ function Price() {
     const payPlus = async() => {
         const pay_modal = document.getElementById('pay_modal')
         if (!pay_modal) return;
-        setPrice("0.03");
+        setPrice("9.9");
         setSubscription("月付");
         pay_modal.showModal();
     };
 
 
     return (
-        <div className="max-w-[85rem] py-10 px-4 sm:px-6 lg:px-8 mx-auto">
+        // bg-[url('http://127.0.0.1:3000/wave.svg')] bg-cover
+        <div className="max-w-[85rem] py-10 px-4 sm:px-6 lg:px-8 mx-auto ">
             
             <dialog id="pay_modal" className="modal">
             <div className="modal-box bg-white w-96">

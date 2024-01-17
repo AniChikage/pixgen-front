@@ -94,11 +94,11 @@ export default function Profile () {
     };
 
     return (
-        <div className="bg-white py-20">
+        <div className="bg-white py-20 ">
             <div className="container mx-auto py-8 max-w-[83rem]">
                 <div className="grid grid-cols-4 sm:grid-cols-12 gap-6 px-4">
                     <div className="col-span-4 sm:col-span-3">
-                        <div className="bg-white shadow rounded-lg p-6">
+                        <div className=" shadow rounded-lg p-6">
                             <div className="flex flex-col items-center">
                                 <Image src={DefaultIcon} className="w-32 h-32 bg-gray-300 rounded-full mb-4 shrink-0" alt="" />
                                 <h1 className="text-xl font-bold text-black">{username}</h1>
