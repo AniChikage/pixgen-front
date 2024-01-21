@@ -55,7 +55,7 @@ function Price() {
 
     return (
         // bg-[url('http://127.0.0.1:3000/wave.svg')] bg-cover
-        <div className="max-w-[85rem] py-10 px-4 sm:px-6 lg:px-8 mx-auto ">
+        <div className="max-w-[85rem] py-10 px-4 sm:px-6 lg:px-8 mx-auto bg-[url('http://127.0.0.1:3000/ract.svg')] bg-cover">
             
             <dialog id="pay_modal" className="modal">
             <div className="modal-box bg-white w-96">
@@ -108,7 +108,7 @@ function Price() {
             </div> */}
 
             <div className="mt-12 grid sm:grid-cols-2 lg:grid-cols-4 gap-6 lg:items-center">
-                <div className="flex flex-col border border-gray-200 text-center rounded-xl p-8 light:border-gray-700">
+                <div className="flex flex-col bg-white border border-gray-200 text-center rounded-xl p-8 light:border-gray-700">
                 <h4 className="font-medium text-lg text-gray-800 light:text-gray-200">免费</h4>
                 <span className="mt-7 font-bold text-5xl text-gray-800 light:text-gray-200">免费</span>
                 <p className="mt-2 text-sm text-gray-500">永久免费</p>
@@ -148,7 +148,7 @@ function Price() {
                 </div>
 
 
-                <div className="flex flex-col border border-gray-200 text-center rounded-xl p-8 light:border-gray-700">
+                <div className="flex flex-col bg-white border border-gray-200 text-center rounded-xl p-8 light:border-gray-700">
                 <h4 className="font-medium text-lg text-gray-800 light:text-gray-200">试用</h4>
                 <span className="mt-5 font-bold text-5xl text-gray-800 light:text-gray-200">
                     {/* <span className="font-bold text-3xl -me-2">¥</span> */}
@@ -194,7 +194,7 @@ function Price() {
                 
 
                 
-                <div className="flex flex-col border-2 border-blue-600 text-center shadow-xl rounded-xl p-8 light:border-blue-700">
+                <div className="flex flex-col border-2 bg-white border-blue-600 text-center shadow-xl rounded-xl p-8 light:border-blue-700">
                 <p className="mb-3"><span className="inline-flex items-center gap-1.5 py-1.5 px-3 rounded-lg text-xs uppercase font-semibold bg-blue-100 text-blue-800 light:bg-blue-600 light:text-white">最受欢迎</span></p>
                 <h4 className="font-medium text-lg text-gray-800 light:text-gray-200">灵活</h4>
                 <span className="mt-5 font-bold text-5xl text-gray-800 light:text-gray-200">
@@ -240,7 +240,7 @@ function Price() {
                 </div>
                 
                 
-                <div className="flex flex-col border border-gray-200 text-center rounded-xl p-8 light:border-gray-700">
+                <div className="flex flex-col bg-white border border-gray-200 text-center rounded-xl p-8 light:border-gray-700">
                 <h4 className="font-medium text-lg text-gray-800 light:text-gray-200">月付</h4>
                 <span className="mt-5 font-bold text-5xl text-gray-800 light:text-gray-200">
                     {/* <span className="font-bold text-2xl -me-2">$</span> */}

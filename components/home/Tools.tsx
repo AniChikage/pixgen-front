@@ -7,6 +7,7 @@ import BlurImage from '@/public/home/blur.webp'
 import RemoveObject from '@/public/home/remove_object.webp'
 import RemoveBG from '@/public/home/remove_bg.webp'
 import FaceSwap from '@/public/home/faceswap.webp'
+import MeteorSVG from '@/public/meteor.svg'
 
 export default function Tools() {
     
@@ -34,7 +35,7 @@ export default function Tools() {
         </div>
 
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-            <a className="group hover:bg-gray-100 rounded-xl p-5 transition-all light:hover:bg-white/[.05]" href="/blur">
+            <a className="group hover:bg-gray-300  rounded-xl p-5 transition-all light:hover:bg-white/[.05]" href="/blur">
             <div className="aspect-w-16 aspect-h-10">
                 <Image className="w-full object-cover rounded-xl h-64" src={BlurImage} alt="Image Description" />
             </div>
@@ -47,7 +48,7 @@ export default function Tools() {
             </p>
             </a>
 
-            <a className="group hover:bg-gray-100 rounded-xl p-5 transition-all light:hover:bg-white/[.05]" href="/erase">
+            <a className="group hover:bg-gray-300  rounded-xl p-5 transition-all light:hover:bg-white/[.05]" href="/erase">
             <div className="aspect-w-16 aspect-h-10">
                 <Image className="w-full object-cover rounded-xl h-64" src={RemoveObject}  alt="Image Description" />
             </div>
@@ -60,7 +61,7 @@ export default function Tools() {
             </p>
             </a>
 
-            <a className="group hover:bg-gray-100 rounded-xl p-5 transition-all light:hover:bg-white/[.05]" href="/removebg">
+            <a className="group hover:bg-gray-300  rounded-xl p-5 transition-all light:hover:bg-white/[.05]" href="/removebg">
             <div className="aspect-w-16 aspect-h-10">
                 <Image className="w-full object-cover rounded-xl h-64" src={RemoveBG} alt="Image Description" />
             </div>
@@ -76,7 +77,7 @@ export default function Tools() {
             
         </div>
 
-        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 mt-5">
             {/* <a className="group hover:bg-gray-100 rounded-xl p-5 transition-all light:hover:bg-white/[.05]" href="/#">
             <div className="aspect-w-16 aspect-h-10">
                 <Image className="w-full object-cover rounded-xl h-64" src="https://images.unsplash.com/photo-1657299171054-e679f630a776?ixlib=rb-4.0.3&ixid=MnwxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80" width={200} height={100} alt="Image Description" />
@@ -89,7 +90,7 @@ export default function Tools() {
                 <svg className="flex-shrink-0 w-4 h-4 transition ease-in-out group-hover:translate-x-1" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="m9 18 6-6-6-6"/></svg>
             </p>
             </a> */}
-            <a className="group hover:bg-gray-100 rounded-xl p-5 transition-all light:hover:bg-white/[.05]" href="/faceswap">
+            <a className="group hover:bg-gray-300  rounded-xl p-5 transition-all light:hover:bg-white/[.05]" href="/faceswap">
             <div className="aspect-w-16 aspect-h-10">
                 <Image className="w-full object-cover rounded-xl h-64" src={FaceSwap} width={200} height={100} alt="Image Description" />
             </div>

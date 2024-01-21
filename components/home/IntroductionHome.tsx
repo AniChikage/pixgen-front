@@ -3,7 +3,19 @@ import { ReactCompareSlider, ReactCompareSliderImage } from 'react-compare-slide
 export default function Introdcution() {
     return (
         <div className="relative overflow-hidden bg-[url('https://preline.co/assets/svg/examples/polygon-bg-element.svg')] ">
-        <div className="max-w-[85rem] mx-auto px-4 sm:px-6 lg:px-8 py-16">
+            <div className="max-w-[85rem] mx-auto px-4 sm:px-6 lg:px-8 py-16">
+            <div className="bg-gradient-to-r from-red-500 via-purple-400 to-blue-500">
+            <div className="max-w-[85rem] px-4 py-4 sm:px-6 lg:px-8 mx-auto">
+                <div className="grid justify-center md:grid-cols-2 md:justify-between md:items-center gap-2">
+                <div className="text-center md:text-start">
+                    <p className="mt-1 text-white font-medium">
+                    网站后端由于访问原因，新付费用户暂时不能使用会员功能，请将您的账号和付费计划发至pixgen@163邮箱，会为您额外增加新的时长作为补偿。抱歉给您带来不好的体验
+                    </p>
+                </div>
+
+                </div>
+            </div>
+            </div>
             <div className="max-w-2xl text-center mx-auto mt-10">
             <h1 className="block text-3xl font-bold text-gray-800 sm:text-4xl md:text-5xl light:text-white"><span className="text-blue-600">几秒内</span>创造令人惊叹的视觉效果 </h1>
             {/* <h1 className="block text-3xl font-bold text-gray-800 sm:text-4xl md:text-5xl light:text-white">(维护中，请稍后重试) </h1> */}
