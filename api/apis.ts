@@ -435,3 +435,28 @@ export async function blur(
     throw new Error(`upsaler failed: ${error}`)
   }
 }
+
+
+export async function getHint(
+) {
+  try {
+    const res = await fetch(`${API_ENDPOINT}/api/config/get_hint`, {
+      method: 'POST',
+      mode: 'cors',
+      // headers: {
+      //   'Content-Type': 'multipart/form-data',
+      // },
+    })
+    console.log(res)
+    if (res.ok) {
+      const data = await res.json();
+      console.log(data)
+      return data;
+    } else {
+      const errMsg = await res.text()
+      console.log(errMsg);
+    }
+  } catch (error) {
+    throw new Error(`upsaler failed: ${error}`)
+  }
+}

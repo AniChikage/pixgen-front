@@ -31,7 +31,7 @@ function Price() {
     const payTrial = async() => {
         const pay_modal = document.getElementById('pay_modal')
         if (!pay_modal) return;
-        setPrice("1.9");
+        setPrice("0.01");
         setSubscription("试用");
         pay_modal.showModal();
     };
