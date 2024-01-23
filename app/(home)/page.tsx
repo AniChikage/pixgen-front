@@ -2,9 +2,10 @@
 
 import Introdcution from "@/components/home/IntroductionHome";
 import Price from "@/components/home/Price";
-import Tools from "@/components/home/Tools";
+import Tools from "@/components/home/ToolsFull";
 import FAQ from '@/components/home/FAQ';
 import Features from '@/components/home/Features';
+import Goods from '@/components/home/Goods'
 
 function Home() {
     return (
@@ -12,7 +13,8 @@ function Home() {
             <Introdcution />
             <Tools />
             {/* <Features /> */}
-            <Price />
+            {/* <Price /> */}
+            <Goods />
             <FAQ />
         </div>
     )

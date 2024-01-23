@@ -114,6 +114,15 @@ function Nav () {
                                 </div>
                                 </a>
                             </li>
+                            <li>
+                                <a className="group flex gap-x-5 hover:bg-gray-200 rounded-lg p-4 light:text-gray-200 light:hover:bg-gray-900 light:focus:outline-none light:focus:ring-1 light:focus:ring-gray-600" href="/faceswap">
+                                <svg className="flex-shrink-0 w-5 h-5 mt-1" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="green" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="m7 11 2-2-2-2"/><path d="M11 13h4"/><rect width="18" height="18" x="3" y="3" rx="2" ry="2"/></svg>
+                                <div className="grow w-60">
+                                    <p className="font-medium text-gray-800 light:text-gray-200">一键换脸</p>
+                                    <p className="w-full text-sm text-gray-500 group-hover:text-gray-800 light:group-hover:text-gray-200">一键交换两张图片的人脸</p>
+                                </div>
+                                </a>
+                            </li>
                         </ul>
                         </details>
                     </li>

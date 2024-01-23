@@ -25,7 +25,8 @@ export default function Introdcution() {
     }, []);
 
     return (
-        <div className="relative overflow-hidden bg-[url('https://preline.co/assets/svg/examples/polygon-bg-element.svg')] ">
+        // bg-[url('https://preline.co/assets/svg/examples/polygon-bg-element.svg')]
+        <div className="relative overflow-hidden  bg-[url('https://preline.co/assets/svg/examples/polygon-bg-element.svg')]">
             <div className="max-w-[85rem] mx-auto px-4 sm:px-6 lg:px-8 py-16">
 
             {
@@ -46,12 +47,13 @@ export default function Introdcution() {
             </div>
 
             <div className="mt-10 relative max-w-5xl mx-auto">
-            <ReactCompareSlider className='w-full h-128 rounded-xl' changePositionOnHover={true}
-                itemOne={<ReactCompareSliderImage src="https://pixgen.pro/home/erase_object_diff_2.webp" alt="Image one" />}
-                itemTwo={<ReactCompareSliderImage src="https://pixgen.pro/home/erase_object_diffd_2.webp" alt="Image two" />}
-                />
+                <ReactCompareSlider className='w-full h-128 rounded-xl' changePositionOnHover={true}
+                    itemOne={<ReactCompareSliderImage src="https://pixgen.pro/home/erase_object_diff_2.webp" alt="Image one" />}
+                    itemTwo={<ReactCompareSliderImage src="https://pixgen.pro/home/erase_object_diffd_2.webp" alt="Image two" />}
+                    />
+                </div>
             </div>
-        </div>
+
         </div>
     )
 }

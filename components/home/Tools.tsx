@@ -104,33 +104,59 @@ export default function Tools() {
             </a>
         </div>
 
-        {/* <a className="group hover:bg-gray-100 rounded-xl p-5 transition-all light:hover:bg-white/[.05]" href="/#">
-            <div className="aspect-w-16 aspect-h-10 rounded-xl"
-                onMouseEnter={handleMouseEnter}
-                onMouseLeave={handleMouseLeave}
-            >
-                {
-                    isClient?
-                        <ReactPlayer 
-                        className="rounded-xl overflow-hidden"
-                        url="http://pixgen.pro:8010/images/eraser.mp4"
-                        playing={hover} 
-                        loop={true} 
-                        controls={false}
-                        width='100%'
-                        height='100%'
-                    />
-                    : null
-                } 
+        <div className="grid lg:grid-cols-3 gap-6">
+            <a className="group relative block rounded-xl focus:outline-none focus:ring-1 focus:ring-gray-600" href="#">
+            <div className="flex-shrink-0 relative w-full rounded-xl overflow-hidden h-[350px] before:absolute before:inset-x-0 before:w-full before:h-full before:bg-gradient-to-t before:from-gray-900/[.7] before:z-[1]">
+                <Image className="w-full object-cover cover h-full group-hover:scale-105 duration-300" src={FaceSwap} width={200} height={100} alt="Image Description" />
             </div>
-            <h3 className="mt-5 text-xl text-gray-800 light:text-gray-300 light:hover:text-white">
-                消除背景
-            </h3>
-            <p className="mt-3 inline-flex items-center gap-x-1 text-sm  text-gray-900 light:text-gray-200">
-                消除图片中的人物背景
-                <svg className="flex-shrink-0 w-4 h-4 transition ease-in-out group-hover:translate-x-1" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="m9 18 6-6-6-6"/></svg>
-            </p>
-            </a> */}
+
+            <div className="absolute bottom-0 inset-x-0 z-10">
+                <div className="flex flex-col h-full p-4 sm:p-6">
+                <h3 className="text-lg sm:text-3xl font-semibold text-white group-hover:text-white/[.8]">
+                    一键换脸
+                </h3>
+                <p className="mt-2 text-white/[.8]">
+                    一键交换任意两张图片的人脸
+                </p>
+                </div>
+            </div>
+            </a>
+
+            <a className="group relative block rounded-xl light:focus:outline-none light:focus:ring-1 light:focus:ring-gray-600" href="#">
+            <div className="flex-shrink-0 relative w-full rounded-xl overflow-hidden h-[350px] before:absolute before:inset-x-0 before:w-full before:h-full before:bg-gradient-to-t before:from-gray-900/[.7] before:z-[1]">
+                <Image className="w-full object-cover h-full cover group-hover:scale-105 duration-300" src={BlurImage} alt="Image Description" />
+            </div>
+
+            <div className="absolute bottom-0 inset-x-0 z-10">
+                <div className="flex flex-col h-full p-4 sm:p-6">
+                <h3 className="text-lg sm:text-3xl font-semibold text-white group-hover:text-white/[.8]">
+                    背景模糊
+                </h3>
+                <p className="mt-2 text-white/[.8]">
+                    模糊图片中人物的背景
+                </p>
+                </div>
+            </div>
+            </a>
+
+            <a className="group relative block rounded-xl light:focus:outline-none light:focus:ring-1 light:focus:ring-gray-600" href="#">
+            <div className="flex-shrink-0 relative w-full rounded-xl overflow-hidden h-[350px] before:absolute before:inset-x-0 before:w-full before:h-full before:bg-gradient-to-t before:from-gray-900/[.7] before:z-[1]">
+                <Image className="w-full object-cover h-full cover group-hover:scale-105 duration-300" src={RemoveObject}  alt="Image Description" />
+            </div>
+
+
+            <div className="absolute bottom-0 inset-x-0 z-10">
+                <div className="flex flex-col h-full p-4 sm:p-6">
+                <h3 className="text-lg sm:text-3xl font-semibold text-white group-hover:text-white/[.8]">
+                    橡皮擦
+                </h3>
+                <p className="mt-2 text-white/[.8]">
+                    消除任意物体、人物、水印、文字等
+                </p>
+                </div>
+            </div>
+            </a>
+        </div>
 
         </div>
     )

@@ -31,7 +31,7 @@ function Price() {
     const payTrial = async() => {
         const pay_modal = document.getElementById('pay_modal')
         if (!pay_modal) return;
-        setPrice("1.90");
+        setPrice("0.01");
         setSubscription("试用");
         pay_modal.showModal();
     };
@@ -55,12 +55,14 @@ function Price() {
 
     return (
         // bg-[url('http://127.0.0.1:3000/wave.svg')] bg-cover
-        <div className="max-w-[85rem] py-10 px-4 sm:px-6 lg:px-8 mx-auto bg-[url('http://127.0.0.1:3000/ract.svg')] bg-cover">
+        <div className="max-w-[85rem] py-10 px-4 sm:px-6 lg:px-8 mx-auto bg-[url('http://127.0.0.1:3000/ract.svg')] bg-cover ">
             
             <dialog id="pay_modal" className="modal">
-            <div className="modal-box bg-white w-96">
-                <div className="modal-action items-center justify-center flex pb-8">
-                    <h3 className="font-bold text-lg text-black">{subscription}</h3>
+            <div className="modal-box bg-white/95 w-96">
+                <div className="modal-action items-center justify-center flex pb-8 ">
+                    <h3 className="font-bold text-lg text-black">您正在订阅“{subscription}”计划
+                      <p className="text-base text-black">（微信支付暂不支持）</p>
+                    </h3>
                 </div>
                 
                 <div className="flex justify-center items-center">
