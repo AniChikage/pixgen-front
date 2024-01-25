@@ -7,6 +7,7 @@ import BlurImage from '@/public/home/blur.webp'
 import RemoveObject from '@/public/home/remove_object.webp'
 import RemoveBG from '@/public/home/remove_bg.webp'
 import FaceSwap from '@/public/home/faceswap.webp'
+import Upscaler from '@/public/home/upscaler.jpg'
 import MeteorSVG from '@/public/meteor.svg'
 
 export default function Tools() {

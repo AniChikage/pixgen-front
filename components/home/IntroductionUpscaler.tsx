@@ -2,6 +2,7 @@ import Image from 'next/image'
 import { useEffect, useState } from 'react';
 import ReactPlayer from 'react-player';
 import EraseGIF from '@/public/home/erase.gif'
+import Upscaler from '@/public/home/upscaler.jpg'
 
 export default function Introdcution () {
 
@@ -66,7 +67,7 @@ export default function Introdcution () {
             </div>
 
             <div className="lg:col-span-4 lg:mt-20">
-            <Image className="w-full rounded-xl" src={EraseGIF.src} width={300} height={100} alt="" />
+            <Image className="w-full rounded-xl" src={Upscaler.src} width={300} height={100} alt="" />
             </div>
         </div>
         </div>

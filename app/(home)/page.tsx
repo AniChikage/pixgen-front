@@ -1,5 +1,4 @@
 // import Head from 'next/head'
-
 import Introdcution from "@/components/home/IntroductionHome";
 import Price from "@/components/home/Price";
 import Tools from "@/components/home/ToolsFull";

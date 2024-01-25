@@ -123,6 +123,17 @@ function Nav () {
                                 </div>
                                 </a>
                             </li>
+                            <li>
+                                <a className="group flex gap-x-5 hover:bg-gray-200 rounded-lg p-4 light:text-gray-200 light:hover:bg-gray-900 light:focus:outline-none light:focus:ring-1 light:focus:ring-gray-600" href="/upscaler">
+                                <svg className="flex-shrink-0 w-5 h-5 mt-1" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="green" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="m7 11 2-2-2-2"/><path d="M11 13h4"/><rect width="18" height="18" x="3" y="3" rx="2" ry="2"/></svg>
+                                <div className="grow w-60">
+                                    <p className="font-medium text-gray-800 light:text-gray-200">
+                                    高清修复
+                                    </p>
+                                    <p className="w-full text-sm text-gray-500 group-hover:text-gray-800 light:group-hover:text-gray-200">一键修复低分辨率图片</p>
+                                </div>
+                                </a>
+                            </li>
                         </ul>
                         </details>
                     </li>
@@ -141,15 +152,15 @@ function Nav () {
                             <ul className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-white rounded-lg w-40">
                                 <li>
                                     <a className="flex items-center gap-x-3.5 py-2 px-3 rounded-md text-sm text-gray-800 hover:bg-gray-100 focus:outline-none focus:bg-gray-100 light:text-gray-400 light:hover:bg-gray-700 light:hover:text-gray-300 light:focus:bg-gray-700" href="/profile">
-                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor" class="w-4 h-4">
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor" className="w-4 h-4">
                                     <path d="M8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6ZM12.735 14c.618 0 1.093-.561.872-1.139a6.002 6.002 0 0 0-11.215 0c-.22.578.254 1.139.872 1.139h9.47Z" />
                                     </svg>个人资料
                                     </a>
                                 </li>
                                 <li>
                                     <a className="flex items-center gap-x-3.5 py-2 px-3 rounded-md text-sm text-gray-800 hover:bg-gray-100 focus:outline-none focus:bg-gray-100 light:text-gray-400 light:hover:bg-gray-700 light:hover:text-gray-300 light:focus:bg-gray-700" href="/#" onClick={logout}>
-                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor" class="w-4 h-4">
-                                    <path fill-rule="evenodd" d="M8 15A7 7 0 1 0 8 1a7 7 0 0 0 0 14Zm2.78-4.22a.75.75 0 0 1-1.06 0L8 9.06l-1.72 1.72a.75.75 0 1 1-1.06-1.06L6.94 8 5.22 6.28a.75.75 0 0 1 1.06-1.06L8 6.94l1.72-1.72a.75.75 0 1 1 1.06 1.06L9.06 8l1.72 1.72a.75.75 0 0 1 0 1.06Z" clip-rule="evenodd" />
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor" className="w-4 h-4">
+                                    <path fillRule="evenodd" d="M8 15A7 7 0 1 0 8 1a7 7 0 0 0 0 14Zm2.78-4.22a.75.75 0 0 1-1.06 0L8 9.06l-1.72 1.72a.75.75 0 1 1-1.06-1.06L6.94 8 5.22 6.28a.75.75 0 0 1 1.06-1.06L8 6.94l1.72-1.72a.75.75 0 1 1 1.06 1.06L9.06 8l1.72 1.72a.75.75 0 0 1 0 1.06Z" clipRule="evenodd" />
                                     </svg>退出
                                     </a>
                                 </li>

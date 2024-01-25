@@ -5,6 +5,7 @@ import React, { useState, useRef, useEffect } from 'react';
 import { getImage, upscaler, checkPro } from '@/api/apis';
 
 import { ArrowLeftIcon, ArrowUturnLeftIcon } from '@heroicons/react/24/outline';
+import ScaleLoaderComponent from '@/components/loading/ScaleLoader';
 
 const Editor = () => {
     const router = useRouter();
@@ -37,6 +38,7 @@ const Editor = () => {
     const [latestImageHighUrl, setLatestImageHighUrl] = useState<string>("");
     const [latestImageLowUrl, setLatestImageLowUrl] = useState<string>("");
     const [pro, setPro] = useState(false);
+    const [loading, setLoading] = useState(false);
 
     useEffect(() => {
       const image_url = sessionStorage.getItem('image_url');
@@ -205,6 +207,7 @@ const Editor = () => {
     try {
       if (pro) {
         if (!latestImageHighUrl) return;
+        setLoading(true);
         await fetch(latestImageHighUrl)
         .then(response => response.blob())
         .then(blob => {
@@ -216,6 +219,7 @@ const Editor = () => {
           document.body.appendChild(a);
           a.click();
           document.body.removeChild(a);
+          setLoading(false)
         })
         .catch(error => console.error('Error downloading image:', error));
       } else {
@@ -272,7 +276,7 @@ const Editor = () => {
                       onClick={upscalerImage}
                       disabled={processing || upscaled}
                     >
-                    一键放大
+                    一键修复
                     </button>
                     <button type="button" className="py-2 px-4 inline-flex items-center gap-x-2 text-sm font-semibold rounded-lg border border-gray-200 text-gray-500 hover:border-blue-600 hover:text-blue-600 disabled:opacity-50 disabled:pointer-events-none dark:border-gray-700 dark:text-gray-400 dark:hover:text-blue-500 dark:hover:border-blue-600 dark:focus:outline-none dark:focus:ring-1 dark:focus:ring-gray-600"
                       disabled={processing}
@@ -316,6 +320,8 @@ const Editor = () => {
               />
           </div>
         </div>
+
+        {loading && <ScaleLoaderComponent />}
       {/* <button onClick={sendToBackend}>Send to Backend</button> */}
     </div>
   );
