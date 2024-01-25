@@ -59,7 +59,7 @@ export default function Introdcution() {
                     isClient && 
                     <ReactPlayer 
                         className="rounded-xl overflow-hidden"
-                        url="http://127.0.0.1:3000/home/pixgen.mp4"
+                        url="https://pixgen.pro/home/pixgen.mp4"
                         playing={true} 
                         loop={true} 
                         controls={false}
