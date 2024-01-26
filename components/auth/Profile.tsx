@@ -94,18 +94,30 @@ export default function Profile () {
     };
 
     return (
-        <div className="bg-white py-20 ">
+        <div className=" py-20 "
+            style={{
+                backgroundColor: "#1F1F1F"
+            }}
+        >
             <div className="container mx-auto py-8 max-w-[83rem]">
                 <div className="grid grid-cols-4 sm:grid-cols-12 gap-6 px-4">
                     <div className="col-span-4 sm:col-span-3">
-                        <div className=" shadow rounded-lg p-6">
+                        <div className=" shadow rounded-lg p-6 bg-black"
+                            style={{
+                                // backgroundColor: "#00DBDE",
+                                // backgroundImage: "linear-gradient(90deg, #00DBDE 0%, #FC00FF 100%)"
+                                backgroundColor: "#884c80",
+                                backgroundImage: "linear-gradient(135deg, #884c80 0%, #9599E2 100%)"
+
+                            }}
+                        >
                             <div className="flex flex-col items-center">
                                 <Image src={DefaultIcon} className="w-32 h-32 bg-gray-300 rounded-full mb-4 shrink-0" alt="" />
-                                <h1 className="text-xl font-bold text-black">{username}</h1>
+                                <h1 className="text-xl font-bold text-white">{username}</h1>
                                 {
                                     effective === "0" && 
                                     <div className="badge badge-accent badge-outline mt-3 h-7 flex items-center">
-                                        <p className="text-sm text-gray-600">免费计划</p>
+                                        <p className="text-sm text-white">免费计划</p>
                                     </div>
                                 }
                                 {
@@ -118,81 +130,81 @@ export default function Profile () {
                             </div>
                             <hr className="my-6 border-t border-gray-300" />
                             <div className="flex flex-col">
-                                <span className="text-gray-700 uppercase font-bold tracking-wider mb-2">付费计划</span>
+                                <span className="text-white uppercase font-bold tracking-wider mb-2">付费计划</span>
                                 <ul>
-                                    <li className="mb-2 text-black">到期时间：{effectiveTimestamp}</li>
-                                    <li className="mb-2 text-black">剩余次数：{effectiveCounts}</li>
+                                    <li className="mb-2 text-white">到期时间：{effectiveTimestamp}</li>
+                                    <li className="mb-2 text-white">剩余次数：{effectiveCounts}</li>
                                 </ul>
                             </div>
                         </div>
                     </div>
                     <div className="col-span-4 sm:col-span-9">
-                        <div className="max-w-[85rem] px-4 sm:px-6 mx-auto">
+                        <div className="max-w-[85rem] px-4 sm:px-6 mx-auto ">
                         <div className="flex flex-col">
                             <div className="-m-1.5 overflow-x-auto">
                             <div className="p-1.5 min-w-full inline-block align-middle">
-                                <div className="bg-white border border-gray-200 rounded-xl shadow-sm overflow-hidden light:bg-slate-900 light:border-gray-700">
-                                <div className="px-6 py-4 grid gap-3 md:flex md:justify-between md:items-center border-b border-gray-200 light:border-gray-700">
+                                <div className="bg-black border border-black rounded-xl shadow-sm overflow-hidden light:bg-slate-900  ">
+                                <div className="px-6 py-4 grid gap-3 md:flex md:justify-between md:items-center border-b divide-gray-900 ">
                                     <div>
-                                    <p className="text-base font-semibold text-gray-800 light:text-gray-200">
+                                    <p className="text-base font-semibold text-white ">
                                         付费记录
                                     </p>
                                     </div>
                                 </div>
 
-                                <table className="min-w-full divide-y divide-gray-200 light:divide-gray-700">
-                                    <thead className="bg-gray-50 divide-y divide-gray-200 light:bg-gray-800 light:divide-gray-700">
+                                <table className="min-w-full divide-y divide-zinc-500">
+                                    <thead className="bg-black divide-y divide-gray-900 light:bg-gray-800 light:divide-gray-700">
                                     <tr>
-                                        <th scope="col" className="px-6 py-3 text-start border-s border-gray-200 light:border-gray-700">
-                                        <span className="text-xs font-semibold uppercase tracking-wide text-gray-800 light:text-gray-200">
+                                        <th scope="col" className="px-6 py-3 text-start border-s divide-gray-900 light:border-gray-700">
+                                        <span className="text-xs font-semibold uppercase tracking-wide text-white light:text-gray-200">
                                             订单号
                                         </span>
                                         </th>
 
                                         <th scope="col" className="px-6 py-3 text-start">
-                                        <span className="text-xs font-semibold uppercase tracking-wide text-gray-800 light:text-gray-200">
+                                        <span className="text-xs font-semibold uppercase tracking-wide text-white light:text-gray-200">
                                             金额
                                         </span>
                                         </th>
 
                                         <th scope="col" className="px-6 py-3 text-start">
-                                        <span className="text-xs font-semibold uppercase tracking-wide text-gray-800 light:text-gray-200">
+                                        <span className="text-xs font-semibold uppercase tracking-wide text-white light:text-gray-200">
                                             订阅计划
                                         </span>
                                         </th>
 
                                         <th scope="col" className="px-6 py-3 text-start">
-                                        <span className="text-xs font-semibold uppercase tracking-wide text-gray-800 light:text-gray-200">
+                                        <span className="text-xs font-semibold uppercase tracking-wide text-white light:text-gray-200">
                                             支付时间
                                         </span>
                                         </th>
                                     </tr>
                                     </thead>
 
-                                    <tbody className="divide-y divide-gray-200 light:divide-gray-700">
+                                    <tbody className="divide-y divide-gray-900 light:divide-gray-700">
 
                                     {orders.map(order => (
                                         <tr key={order.out_trade_no}>
                                             <td className="h-px w-auto whitespace-nowrap">
                                             <div className="px-6 py-2 flex items-center gap-x-3">
                                                 <a className="flex items-center gap-x-2">
-                                                <span className="text-sm text-black ">{order.out_trade_no}</span>
+                                                <span className="text-sm text-white ">{order.out_trade_no}</span>
                                                 </a>
                                             </div>
                                             </td>
                                             <td className="h-px w-auto whitespace-nowrap">
                                             <div className="px-6 py-2">
-                                                <span className="text-sm text-gray-800 light:text-gray-200">{order.total_amount}</span>
+                                                <span className="text-sm text-white light:text-gray-200">{order.total_amount}</span>
                                             </div>
                                             </td>
                                             <td className="h-px w-auto whitespace-nowrap">
                                             <div className="px-6 py-2">
-                                                <span className="text-sm text-gray-800 light:text-gray-200">{order.subscription}</span>
+                                                <span className="text-sm text-white light:text-gray-200">{order.subscription}</span>
                                             </div>
                                             </td>
                                             <td className="h-px w-auto whitespace-nowrap">
                                             <div className="px-6 py-2">
-                                                <span className="text-sm text-gray-800 light:text-gray-200">{order.gmt_payment}</span>
+                                                <span className="text-sm text-white light:text-gray-200">{order.gmt_payment}</span>
                                             </div>
                                             </td>
                                         </tr>
@@ -201,16 +213,16 @@ export default function Profile () {
                                     </tbody>
                                 </table>
 
-                                <div className="px-6 py-4 grid gap-3 md:flex md:justify-between md:items-center border-t border-gray-200 light:border-gray-700">
+                                <div className="px-6 py-4 grid gap-3 md:flex md:justify-between md:items-center border-t divide-gray-900 light:border-gray-700">
                                     <div>
-                                    <p className="text-sm text-gray-600 light:text-gray-400">
-                                        <span className="font-semibold text-gray-800 light:text-gray-200"></span>
+                                    <p className="text-sm text-white light:text-gray-400">
+                                        <span className="font-semibold text-white light:text-gray-200"></span>
                                     </p>
                                     </div>
 
                                     <div>
                                     <div className="inline-flex gap-x-2">
-                                        <button type="button" className="py-2 px-3 inline-flex items-center gap-x-2 text-sm font-medium rounded-lg border border-gray-200 bg-white text-gray-800 shadow-sm hover:bg-gray-50 disabled:opacity-50 disabled:pointer-events-none light:bg-slate-900 light:border-gray-700 light:text-white light:hover:bg-gray-800 light:focus:outline-none light:focus:ring-1 light:focus:ring-gray-600"
+                                        <button type="button" className="py-2 px-3 inline-flex items-center gap-x-2 text-sm font-medium rounded-lg border divide-gray-900 bg-white text-black shadow-sm hover:bg-gray-50 disabled:opacity-50 disabled:pointer-events-none light:bg-slate-900 light:border-gray-700 light:text-white light:hover:bg-gray-800 light:focus:outline-none light:focus:ring-1 light:focus:ring-gray-600"
                                           onClick={getPrevPage}
                                           disabled={page === 1}
                                         >
@@ -218,7 +230,7 @@ export default function Profile () {
                                         上一页
                                         </button>
 
-                                        <button type="button" className="py-2 px-3 inline-flex items-center gap-x-2 text-sm font-medium rounded-lg border border-gray-200 bg-white text-gray-800 shadow-sm hover:bg-gray-50 disabled:opacity-50 disabled:pointer-events-none light:bg-slate-900 light:border-gray-700 light:text-white light:hover:bg-gray-800 light:focus:outline-none light:focus:ring-1 light:focus:ring-gray-600"
+                                        <button type="button" className="py-2 px-3 inline-flex items-center gap-x-2 text-sm font-medium rounded-lg border divide-gray-900 bg-white text-black shadow-sm hover:bg-gray-50 disabled:opacity-50 disabled:pointer-events-none light:bg-slate-900 light:border-gray-700 light:text-white light:hover:bg-gray-800 light:focus:outline-none light:focus:ring-1 light:focus:ring-gray-600"
                                           onClick={getNextPage}
                                           disabled={!hasNext}
                                         >

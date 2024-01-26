@@ -39,22 +39,28 @@ const FileSelector = (props: any) => {
     };
 
     return (
+        <div className="w-full mx-auto py-20 "
+            style={{
+                backgroundColor: "#1F1F1F"
+            }}
+        >
         <div className="w-3/4 mx-auto my-20 ">
             {uploading && <ScaleLoaderComponent />}
             <label
-                className="flex justify-center w-full h-60 px-4 rounded-3xl transition bg-white border-2 border-gray-300 border-dashed appearance-none cursor-pointer hover:bg-blue-200  hover:border-gray-400 focus:outline-none">
+                className="flex justify-center w-full h-60 px-4 rounded-3xl transition bg-black border-2 border-gray-300 border-dashed appearance-none cursor-pointer hover:bg-blue-800  hover:border-gray-400 focus:outline-none">
                 <span className="flex items-center space-x-2 ">
-                    <svg xmlns="http://www.w3.org/2000/svg" className="w-6 h-6 text-gray-600" fill="none" viewBox="0 0 24 24"
+                    <svg xmlns="http://www.w3.org/2000/svg" className="w-6 h-6 text-white" fill="none" viewBox="0 0 24 24"
                         stroke="currentColor" strokeWidth="2">
                         <path strokeLinecap="round" strokeLinejoin="round"
                             d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12" />
                     </svg>
-                    <span className="font-medium text-gray-600 ">
-                        拖拽图片到此处或点击上传
+                    <span className="font-medium text-white/90 ">
+                        点击上传本地图片，支持JPG、PNG
                     </span>
                 </span>
                 <input type="file" name="file_upload" className="hidden" accept="image/png, image/jpeg, image/jpg" onChange={uploaded} />
             </label>
+        </div>
         </div>
     )
 }
