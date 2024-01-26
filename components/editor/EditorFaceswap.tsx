@@ -214,7 +214,7 @@ const Editor = () => {
         setUploading(false);
         return;
       }
-      if (image_high_url == "" || image_low_url == "") {
+      if (image_high_url == "" && image_low_url == "") {
         alert("请上传包含人脸的图片");
       }
       const canvas = canvasRef.current;

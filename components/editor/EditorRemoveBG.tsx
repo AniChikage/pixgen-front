@@ -184,7 +184,7 @@ const Editor = () => {
 
 
   const backTo = async(event: { preventDefault: () => void; }) => {
-    router.push('/blur');
+    router.push('/removebg');
   }
 
   const doRemoveBG = async(event: { preventDefault: () => void; }) => {
