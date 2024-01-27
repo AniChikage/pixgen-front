@@ -78,9 +78,9 @@ export default function Register() {
     }
 
     const goRegister = async(event: { preventDefault: () => void; }) => {
-        if ( email && password && repeated && validation){
+        if ( email && password && repeated){
             try {
-              const response = await registerUser(email, username, password, validation); 
+              const response = await registerUser(email, username, password); 
               const { status, msg, token } = response;
               console.log(status);
               console.log(msg);
@@ -155,10 +155,7 @@ export default function Register() {
                         focus:bg-white focus:outline-none text-slate-800"  required  />
                 </div>
 
-                <div className="flex items-center mt-4">
-                    {/* <label className="block text-gray-700">邮箱验证码</label> */}
-                    {/* { sendValidation === 1 && <label className="block text-gray-700">发送验证码成功</label> }
-                    { sendValidation === -1 && <label className="block text-gray-700">发送验证码失败</label> } */}
+                {/* <div className="flex items-center mt-4">
                     { sendValidation == -2 && <label className="block text-gray-700">验证码过期</label> }
                     { sendValidation == -3 && <label className="block text-gray-700">验证码不正确</label> }
                     <input type="validation" name="validation" id="validation" value={validation} onChange={handleValidationChange} placeholder="邮箱验证码" className="flex-grow px-4 py-3 rounded-lg bg-gray-200 border focus:border-blue-500 focus:bg-white focus:outline-none text-slate-800" required/>
@@ -168,7 +165,7 @@ export default function Register() {
                             "发送验证码" : "重新发送验证码"
                         }
                     </button>
-                </div>
+                </div> */}
 
                 <button type="button" className="w-full block bg-blue-500 duration-200 hover:bg-blue-400 focus:bg-blue-400 text-white font-semibold rounded-lg
                         px-4 py-3 mt-6"

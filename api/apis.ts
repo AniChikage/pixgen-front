@@ -74,13 +74,13 @@ export async function registerUser(
   email: string,
   username: string,
   password: string,
-  validation_code: string
+  // validation_code: string
 ) {
   const fd = new FormData()
   fd.append('email', email)
   fd.append('username', username)
   fd.append('password', password)
-  fd.append('validation_code', validation_code)
+  // fd.append('validation_code', validation_code)
 
   try {
     const res = await fetch(`${API_ENDPOINT}/api/user/register_user`, {
