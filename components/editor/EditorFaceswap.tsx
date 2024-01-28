@@ -225,19 +225,23 @@ const Editor = () => {
       setLatestImageHighUrl(image_high_url);
       setLatestImageLowUrl(image_low_url);
       if (!recover) {
-        const newImageHighUrlArray: string[] = [...imageHighUrlArray, image_high_url];
-        setImageHighUrlArray(newImageHighUrlArray);
+        // const newImageHighUrlArray: string[] = [...imageHighUrlArray, image_high_url];
+        // setImageHighUrlArray(newImageHighUrlArray);
         if (image_low_url) {
           const newImageLowUrlArray = [...imageLowUrlArray, image_low_url];
           setImageLowUrlArray(newImageLowUrlArray);
+        }
+        if (image_high_url) {
+          const newImageHighUrlArray = [...imageHighUrlArray, image_high_url];
+          setImageHighUrlArray(newImageHighUrlArray);
         }
       } else {
         setRecover(false);
       }
 
-      if (image_low_url) {
+      if (image_high_url) {
           const loadImage = async () => {
-              const blob = await getImage(image_low_url);
+              const blob = await getImage(image_high_url);
               if (!blob) {
                 console.error("blob is null");
                 return;
