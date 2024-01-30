@@ -42,6 +42,7 @@ const Editor = () => {
 
     useEffect(() => {
       const image_url = sessionStorage.getItem('image_url');
+      setLoading(true);
       renderCanvas(image_url, image_url);
     }, []);
 
@@ -119,8 +120,6 @@ const Editor = () => {
       setLatestImageHighUrl(image_high_url);
       setLatestImageLowUrl(image_low_url);
       if (!recover) {
-        // const newImageHighUrlArray = [...imageHighUrlArray, image_high_url];
-        // setImageHighUrlArray(newImageHighUrlArray);
         if (image_low_url) {
           const newImageLowUrlArray = [...imageLowUrlArray, image_low_url];
           setImageLowUrlArray(newImageLowUrlArray);
@@ -179,6 +178,7 @@ const Editor = () => {
               };
           };
           loadImage();
+          setLoading(false);
       }
     }
 
@@ -326,6 +326,15 @@ const Editor = () => {
         </div>
 
         {loading && <ScaleLoaderComponent />}
+        {
+          processing && 
+          <div className="toast toast-top toast-center mt-10">
+            <div className="alert alert-success">
+              <span className="text-white">处理预计在2分钟时间内完成，请耐心等待</span>
+            </div>
+          </div>
+        }
+        
       {/* <button onClick={sendToBackend}>Send to Backend</button> */}
     </div>
   );

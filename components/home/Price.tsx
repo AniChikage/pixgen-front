@@ -55,22 +55,22 @@ function Price() {
 
     return (
         // bg-[url('https://pixgen.pro/wave.svg')] bg-cover
-        <div className=" py-16 px-4 sm:px-6 lg:px-8 mx-auto bg-cover "
-            style={{
-                backgroundColor: "#1F1F1F"
-            }}
+        <div className=" py-16 px-4 sm:px-6 lg:px-8 mx-auto bg-cover bg-[url('https://pixgen.pro/wave.svg')] dark:bg-[url('https://pixgen.pro/home/endless-constellation.svg')]"
+            // style={{
+            //     backgroundColor: "#1F1F1F"
+            // }}
         >
 
         <div className="max-w-[85rem] px-4 sm:px-6 lg:px-8 mx-auto bg-cover "
-            style={{
-                backgroundColor: "#1F1F1F"
-            }}
+            // style={{
+            //     backgroundColor: "#1F1F1F"
+            // }}
         >
             <dialog id="pay_modal" className="modal">
-            <div className="modal-box bg-white/95 w-96">
+            <div className="modal-box text-white bg-white/95 dark:text-black dark:bg-white/95 w-96">
                 <div className="modal-action items-center justify-center flex pb-8 ">
-                    <h3 className="font-bold text-lg text-black">您正在订阅“{subscription}”计划
-                      <p className="text-base text-black">（微信支付暂不支持）</p>
+                    <h3 className="font-bold text-lg text-black dark:text-white">您正在订阅“{subscription}”计划
+                      <p className="text-base text-black dark:text-white">（微信支付暂不支持）</p>
                     </h3>
                 </div>
                 
@@ -96,8 +96,8 @@ function Price() {
             </dialog>
 
             <div className="max-w-2xl mx-auto text-center mb-10 lg:mb-14 mt-5">
-                <h2 className="text-2xl font-bold md:text-4xl md:leading-tight text-white light:text-black">定价</h2>
-                <p className="mt-1 text-white/85 light:text-gray-400">选择适合您的付费计划</p>
+                <h2 className="text-2xl font-bold md:text-4xl md:leading-tight dark:text-white text-black">定价</h2>
+                <p className="mt-1 dark:text-white/85 text-gray-900">选择适合您的付费计划</p>
             </div>
 
             {/* <div className="flex justify-center items-center">
@@ -119,35 +119,35 @@ function Price() {
             </div> */}
 
             <div className="mt-8 grid sm:grid-cols-2 lg:grid-cols-4 gap-6 lg:items-center">
-                <div className="flex flex-col bg-black border border-blue-800 text-center rounded-xl p-8 light:border-gray-700">
-                <h4 className="font-medium text-lg text-white">免费</h4>
-                <span className="mt-7 font-bold text-5xl text-white">免费</span>
-                <p className="mt-2 text-sm text-white">永久免费</p>
+                <div className="flex flex-col bg-white dark:bg-black border border-blue-800 text-center rounded-xl p-8 light:border-gray-700">
+                <h4 className="font-medium text-lg text-black dark:text-white">免费</h4>
+                <span className="mt-7 font-bold text-5xl text-black dark:text-white">免费</span>
+                <p className="mt-2 text-sm text-black dark:text-white">永久免费</p>
 
                 <ul className="mt-7 space-y-2.5 text-sm">
                     <li className="flex space-x-2">
                     <svg className="flex-shrink-0 mt-0.5 h-4 w-4 text-blue-600 light:text-blue-500" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
-                    <span className="text-white">
+                    <span className="text-black dark:text-white">
                         永久
                     </span>
                     </li>
                     <li className="flex space-x-2">
                     <svg className="flex-shrink-0 mt-0.5 h-4 w-4 text-blue-600 light:text-blue-500" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
-                    <span className="text-white">
+                    <span className="text-black dark:text-white">
                         低分辨率
                     </span>
                     </li>
 
                     <li className="flex space-x-2">
                     <svg className="flex-shrink-0 mt-0.5 h-4 w-4 text-blue-600 light:text-blue-500" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
-                    <span className="text-white">
+                    <span className="text-black dark:text-white">
                         速度慢
                     </span>
                     </li>
 
                     <li className="flex space-x-2">
                     <svg className="flex-shrink-0 mt-0.5 h-4 w-4 text-blue-600 light:text-blue-500" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
-                    <span className="text-white">
+                    <span className="text-black dark:text-white">
                         无支持
                     </span>
                     </li>
@@ -159,9 +159,9 @@ function Price() {
                 </div>
 
 
-                <div className="flex flex-col bg-black border border-black border-blue-800 text-center rounded-xl p-8 light:border-gray-700">
-                <h4 className="font-medium text-lg text-white">试用</h4>
-                <span className="mt-5 font-bold text-5xl text-white">
+                <div className="flex flex-col bg-white dark:bg-black border  border-blue-800 text-center rounded-xl p-8 light:border-gray-700">
+                <h4 className="font-medium text-lg text-black dark:text-white">试用</h4>
+                <span className="mt-5 font-bold text-5xl text-black dark:text-white">
                     {/* <span className="font-bold text-3xl -me-2">¥</span> */}
                     1.9¥
                 </span>
@@ -170,27 +170,27 @@ function Price() {
                 <ul className="mt-7 space-y-2.5 text-sm">
                     <li className="flex space-x-2">
                     <svg className="flex-shrink-0 mt-0.5 h-4 w-4 text-blue-600 light:text-blue-500" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
-                    <span className="text-white">
+                    <span className="text-black dark:text-white">
                         1天
                     </span>
                     </li>
                     <li className="flex space-x-2">
                     <svg className="flex-shrink-0 mt-0.5 h-4 w-4 text-blue-600 light:text-blue-500" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
-                    <span className="text-white">
+                    <span className="text-black dark:text-white">
                         原始分辨率
                     </span>
                     </li>
 
                     <li className="flex space-x-2">
                     <svg className="flex-shrink-0 mt-0.5 h-4 w-4 text-blue-600 light:text-blue-500" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
-                    <span className="text-white">
+                    <span className="text-black dark:text-white">
                         速度快
                     </span>
                     </li>
 
                     <li className="flex space-x-2">
                     <svg className="flex-shrink-0 mt-0.5 h-4 w-4 text-blue-600 light:text-blue-500" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
-                    <span className="text-white">
+                    <span className="text-black dark:text-white">
                         有支持
                     </span>
                     </li>
@@ -205,39 +205,39 @@ function Price() {
                 
 
                 
-                <div className="flex flex-col border-2 bg-black border-blue-800 text-center shadow-xl rounded-xl p-8 light:border-blue-700">
+                <div className="flex flex-col border-2 bg-white dark:bg-black border-blue-800 text-center shadow-xl rounded-xl p-8 light:border-blue-700">
                 <p className="mb-3"><span className="inline-flex items-center gap-1.5 py-1.5 px-3 rounded-lg text-xs uppercase font-semibold bg-blue-100 text-blue-800 light:bg-blue-600 light:text-white">最受欢迎</span></p>
-                <h4 className="font-medium text-lg text-white">灵活</h4>
-                <span className="mt-5 font-bold text-5xl text-white">
+                <h4 className="font-medium text-lg text-black dark:text-white">灵活</h4>
+                <span className="mt-5 font-bold text-5xl text-black dark:text-white">
                     {/* <span className="font-bold text-2xl -me-2">$</span> */}
                     4.9¥
                 </span>
-                <p className="mt-2 text-sm text-white">按需使用</p>
+                <p className="mt-2 text-sm text-black dark:text-white">按需使用</p>
 
                 <ul className="mt-7 space-y-2.5 text-sm">
                     <li className="flex space-x-2">
                     <svg className="flex-shrink-0 mt-0.5 h-4 w-4 text-blue-600 light:text-blue-500" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
-                    <span className="text-white">
+                    <span className="text-black dark:text-white">
                         100次
                     </span>
                     </li>
                     <li className="flex space-x-2">
                     <svg className="flex-shrink-0 mt-0.5 h-4 w-4 text-blue-600 light:text-blue-500" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
-                    <span className="text-white">
+                    <span className="text-black dark:text-white">
                         原始分辨率
                     </span>
                     </li>
 
                     <li className="flex space-x-2">
                     <svg className="flex-shrink-0 mt-0.5 h-4 w-4 text-blue-600 light:text-blue-500" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
-                    <span className="text-white">
+                    <span className="text-black dark:text-white">
                         速度快
                     </span>
                     </li>
 
                     <li className="flex space-x-2">
                     <svg className="flex-shrink-0 mt-0.5 h-4 w-4 text-blue-600 light:text-blue-500" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
-                    <span className="text-white">
+                    <span className="text-black dark:text-white">
                         有支持
                     </span>
                     </li>
@@ -251,38 +251,38 @@ function Price() {
                 </div>
                 
                 
-                <div className="flex flex-col bg-black border border-black border-blue-800 text-center rounded-xl p-8 light:border-gray-700">
-                <h4 className="font-medium text-lg text-white">月付</h4>
-                <span className="mt-5 font-bold text-5xl text-white">
+                <div className="flex flex-col bg-white dark:bg-black border  border-blue-800 text-center rounded-xl p-8 light:border-gray-700">
+                <h4 className="font-medium text-lg text-black dark:text-white">月付</h4>
+                <span className="mt-5 font-bold text-5xl text-black dark:text-white">
                     {/* <span className="font-bold text-2xl -me-2">$</span> */}
                     9.9¥
                 </span>
-                <p className="mt-2 text-sm text-white">月会员，长期使用</p>
+                <p className="mt-2 text-sm text-black dark:text-white">月会员，长期使用</p>
 
                 <ul className="mt-7 space-y-2.5 text-sm">
                     <li className="flex space-x-2">
                     <svg className="flex-shrink-0 mt-0.5 h-4 w-4 text-blue-600 light:text-blue-500" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
-                    <span className="text-white">
+                    <span className="text-black dark:text-white">
                         30天
                     </span>
                     </li>
                     <li className="flex space-x-2">
                     <svg className="flex-shrink-0 mt-0.5 h-4 w-4 text-blue-600 light:text-blue-500" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
-                    <span className="text-white">
+                    <span className="text-black dark:text-white">
                         原始分辨率
                     </span>
                     </li>
 
                     <li className="flex space-x-2">
                     <svg className="flex-shrink-0 mt-0.5 h-4 w-4 text-blue-600 light:text-blue-500" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
-                    <span className="text-white">
+                    <span className="text-black dark:text-white">
                         速度快
                     </span>
                     </li>
 
                     <li className="flex space-x-2">
                     <svg className="flex-shrink-0 mt-0.5 h-4 w-4 text-blue-600 light:text-blue-500" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
-                    <span className="text-white">
+                    <span className="text-black dark:text-white">
                         有支持
                     </span>
                     </li>

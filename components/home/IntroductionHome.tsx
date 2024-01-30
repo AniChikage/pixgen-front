@@ -30,7 +30,7 @@ export default function Introdcution() {
 
     return (
         // bg-[url('https://preline.co/assets/svg/examples/polygon-bg-element.svg')]
-        <div className="relative overflow-hidden bg-[url('https://pixgen.pro/home/endless-constellation.svg')]"
+        <div className="relative overflow-hidden bg-[url('https://preline.co/assets/svg/examples/polygon-bg-element.svg')] dark:bg-[url('https://pixgen.pro/home/endless-constellation.svg')]"
             // style={{
             //     backgroundColor: "#1F1F1F"
             // }}

@@ -2,7 +2,7 @@
 export default function Footer () {
     return (
         <footer
-        className="bg-black/90 text-center text-white">
+        className=" bg-slate-200 dark:bg-black/90 text-center text-black dark:text-white">
 
         <div className="relative mx-auto py-8 max-w-[82rem] text-center justify-between">
             <div className="grid-1 grid gap-8 md:grid-cols-2 lg:grid-cols-4 text-center">
@@ -90,9 +90,9 @@ export default function Footer () {
             </div>
         </div>
 
-        <div className="bg-black/90 p-3 text-center h-12">
+        <div className=" bg-neutral-100 dark:bg-black/90 p-3 text-center h-12">
             {/* <span>© 2023 Copyright:</span> */}
-            <a className="h-10 text-white  text-xs"  >
+            <a className="h-10 text-black dark:text-white text-xs" href="/#">
                 ©2024 PIXGEN. All Rights Reserved. 备案号: 京ICP备2023012598号
             </a>
         </div>
