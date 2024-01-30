@@ -161,13 +161,13 @@ export default function Login() {
                 <hr className="border-gray-500" />
                 </div>
 
-                <div className="w-full rounded-xl mt-2 flex justify-center items-center">
+                {/* <div className="w-full rounded-xl mt-2 flex justify-center items-center">
                 <button type="button" className="w-8 h-8 hover:scale-105 duration-200" data-hs-overlay="#hs-vertically-centered-modal"
                   onClick={wxClick}
                 >
                   <Image src={WXLogo} alt="" width={100} height={100} />
                 </button>
-                </div>
+                </div> */}
 
                 <div className="text-sm flex justify-between items-center mt-3">
                 <p className="text-slate-800">还没有账号？</p>
