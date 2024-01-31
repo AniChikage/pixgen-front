@@ -94,7 +94,7 @@ export default function Profile () {
     };
 
     return (
-        <div className=" py-20 bg-cover bg-[url('http://127.0.0.1:3000/home/wave2.svg')]"
+        <div className=" py-20 bg-cover bg-[url('https://pixgen.pro/home/wave2.svg')]"
             // style={{
             //     // backgroundColor: "#1F1F1F"
             //     backgroundColor: "#21D4FD",
