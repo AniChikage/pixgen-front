@@ -9,7 +9,7 @@ function FAQ () {
         >
         <div className="max-w-[85rem] px-4 sm:px-6 mx-auto ">
         <div className="max-w-2xl mx-auto text-center mb-10 lg:mb-14">
-            <h2 className="text-2xl font-bold md:text-3xl md:leading-tight text-white">
+            <h2 className="text-2xl font-bold md:text-3xl md:leading-tight text-black dark:text-white">
             常见问题
             </h2>
         </div>

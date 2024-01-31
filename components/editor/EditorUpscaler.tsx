@@ -2,7 +2,7 @@
 import { useRouter } from 'next/navigation';
 import React, { useState, useRef, useEffect } from 'react';
 
-import { getImage, upscaler, checkPro } from '@/api/apis';
+import { getImage, upscaler, checkPro, updatePro } from '@/api/apis';
 
 import { ArrowLeftIcon, ArrowUturnLeftIcon } from '@heroicons/react/24/outline';
 import ScaleLoaderComponent from '@/components/loading/ScaleLoader';
@@ -210,6 +210,10 @@ const Editor = () => {
   const handleDownloadHighClick = async () => {
     try {
       if (pro) {
+        const token = localStorage.getItem('token');
+        if (!token) return;
+        const response = await updatePro(token);
+        const { status, msg, effective } = response;
         if (!latestImageHighUrl) return;
         setLoading(true);
         await fetch(latestImageHighUrl)
