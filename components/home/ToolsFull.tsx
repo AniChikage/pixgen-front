@@ -10,6 +10,7 @@ import RemoveBG from '@/public/home/removebg.jpg'
 // import FaceSwap from '@/public/home/faceswap.webp'
 import FaceSwap from '@/public/home/faceswap.jpg'
 import Upscaler from '@/public/home/upscaler.jpg'
+import ColorBG from '@/public/home/color.jpg'
 import MeteorSVG from '@/public/meteor.svg'
 
 export default function Tools() {
@@ -127,6 +128,23 @@ export default function Tools() {
                 </h3>
                 <p className="mt-2 text-white/[.8]">
                     高清修复图片，包括背景和人脸
+                </p>
+                </div>
+            </div>
+            </a>
+
+            <a className="group relative block rounded-xl h-[280px] focus:outline-none focus:ring-1 focus:ring-gray-600" href="/colorbg">
+            <div className="flex-shrink-0 relative w-full rounded-xl overflow-hidden h-[280px] before:absolute before:inset-x-0 before:w-full before:h-full before:bg-gradient-to-t before:from-gray-900/[.7] before:z-[1]">
+                <Image className="w-full object-cover cover h-full group-hover:scale-105 duration-300" src={ColorBG} alt="Image Description" />
+            </div>
+
+            <div className="absolute bottom-0 inset-x-0 z-10">
+                <div className="flex flex-col h-full p-4 sm:p-6">
+                <h3 className="text-lg sm:text-3xl font-semibold text-white group-hover:text-white/[.8]">
+                    证件照/换底色
+                </h3>
+                <p className="mt-2 text-white/[.8]">
+                    更换图片背景底色
                 </p>
                 </div>
             </div>
