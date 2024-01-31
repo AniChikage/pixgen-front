@@ -94,21 +94,20 @@ export default function Profile () {
     };
 
     return (
-        <div className=" py-20 "
-            style={{
-                backgroundColor: "#1F1F1F"
-            }}
+        <div className=" py-20 bg-cover bg-[url('http://127.0.0.1:3000/home/wave2.svg')]"
+            // style={{
+            //     // backgroundColor: "#1F1F1F"
+            //     backgroundColor: "#21D4FD",
+            //     backgroundImage: "linear-gradient(19deg, #21D4FD 0%, #B721FF 100%)"
+            // }}
         >
             <div className="container mx-auto py-8 max-w-[83rem]">
                 <div className="grid grid-cols-4 sm:grid-cols-12 gap-6 px-4">
                     <div className="col-span-4 sm:col-span-3">
-                        <div className=" shadow rounded-lg p-6 bg-black"
+                        <div className=" shadow rounded-lg p-6"
                             style={{
-                                // backgroundColor: "#00DBDE",
-                                // backgroundImage: "linear-gradient(90deg, #00DBDE 0%, #FC00FF 100%)"
-                                backgroundColor: "#884c80",
-                                backgroundImage: "linear-gradient(135deg, #884c80 0%, #9599E2 100%)"
-
+                                backgroundColor: "rgba(136, 76, 128, 0.7)", // 使用 rgba() 添加透明度
+                                backgroundImage: "linear-gradient(135deg, rgba(136, 76, 128, 0.7) 0%, rgba(149, 153, 226, 0.7) 100%)",
                             }}
                         >
                             <div className="flex flex-col items-center">
@@ -143,7 +142,12 @@ export default function Profile () {
                         <div className="flex flex-col">
                             <div className="-m-1.5 overflow-x-auto">
                             <div className="p-1.5 min-w-full inline-block align-middle">
-                                <div className="bg-black border border-black rounded-xl shadow-sm overflow-hidden light:bg-slate-900  ">
+                                <div className="rounded-xl shadow-sm overflow-hidden light:bg-slate-900"
+                                    style={{
+                                        backgroundColor: "rgba(136, 76, 128, 0.7)", // 使用 rgba() 添加透明度
+                                        backgroundImage: "linear-gradient(135deg, rgba(136, 76, 128, 0.7) 0%, rgba(149, 153, 226, 0.7) 100%)",
+                                    }}
+                                >
                                 <div className="px-6 py-4 grid gap-3 md:flex md:justify-between md:items-center border-b divide-gray-900 ">
                                     <div>
                                     <p className="text-base font-semibold text-white ">
@@ -152,8 +156,8 @@ export default function Profile () {
                                     </div>
                                 </div>
 
-                                <table className="min-w-full divide-y divide-zinc-500">
-                                    <thead className="bg-black divide-y divide-gray-900 light:bg-gray-800 light:divide-gray-700">
+                                <table className="min-w-full divide-y ">
+                                    <thead className="divide-y divide-purple-900 light:bg-gray-800 light:divide-gray-700">
                                     <tr>
                                         <th scope="col" className="px-6 py-3 text-start border-s divide-gray-900 light:border-gray-700">
                                         <span className="text-xs font-semibold uppercase tracking-wide text-white light:text-gray-200">
@@ -181,7 +185,7 @@ export default function Profile () {
                                     </tr>
                                     </thead>
 
-                                    <tbody className="divide-y divide-gray-900 light:divide-gray-700">
+                                    <tbody className=" light:divide-gray-700">
 
                                     {orders.map(order => (
                                         <tr key={order.out_trade_no}>

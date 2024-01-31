@@ -159,7 +159,7 @@ function Nav () {
                                 <Image alt="" src={DefaultIcon} />
                                 </div>
                             </div>
-                            <ul className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow  rounded-lg w-40 bg-white/80 dark:bg-black"
+                            <ul className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow  rounded-lg w-40 bg-white dark:bg-black"
                                 //  style={{
                                 //     backgroundColor: "#0F0F0F"
                                 // }}
