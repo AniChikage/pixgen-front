@@ -217,6 +217,27 @@ export async function createOrder(
   }
 }
 
+export async function getLocalIP(
+) {
+  try {
+
+    const res = await fetch(`https://api.ipify.org/?format=json`, {
+      method: 'GET',
+      mode: 'cors',
+    })
+    console.log(res)
+    if (res.ok) {
+      const data = await res.json();
+      return data;
+    } else {
+      const errMsg = await res.text()
+      console.log(errMsg);
+    }
+  } catch (error) {
+    throw new Error(`upload failed: ${error}`)
+  }
+}
+
 
 export async function uploadImage(
   originImage: File,
@@ -304,10 +325,12 @@ export async function erase(
 export async function faceswap(
   token: string,
   source: File,
-  target: File
+  target: File,
+  ip: string
 ) {
   try {
     const fd = new FormData()
+    fd.append('ip', ip)
     fd.append('source', source)
     fd.append('target', target)
 

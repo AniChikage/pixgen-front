@@ -3,7 +3,7 @@ import { useRouter } from 'next/navigation';
 import React, { useState, useRef, useEffect } from 'react';
 import ScaleLoaderComponent from '@/components/loading/ScaleLoader';
 
-import { getImage, faceswap, checkPro, uploadImage, updatePro } from '@/api/apis';
+import { getImage, faceswap, checkPro, uploadImage, updatePro, getLocalIP } from '@/api/apis';
 
 import { ArrowLeftIcon, FolderOpenIcon } from '@heroicons/react/24/outline';
 
@@ -30,6 +30,9 @@ const Editor = () => {
     const [targetImageUrl, setTargetImageUrl] = useState(null);
     const [sourceImage, setSourceImage] = useState<File | null>(null);
     const [targetImage, setTargetImage] = useState<File | null>(null);
+    const [sourceFilename, setSourceFilename] = useState<string>("");
+    const [targetFilename, setTargetFilename] = useState<string>("");
+    const [showDeny, setShowDeny] = useState(false);
 
     const uploadedSource = (event: React.ChangeEvent<HTMLInputElement>) => {
       const fileInput = event.target;
@@ -39,6 +42,9 @@ const Editor = () => {
     
       const file = fileInput.files[0];
       console.log(file);
+      const fileName = file.name; 
+      // console.log("source filename: " + fileName);
+      setSourceFilename(fileName);
 
       const uploadImageToServer = async () => {
           try {
@@ -71,6 +77,9 @@ const Editor = () => {
     
       const file = fileInput.files[0];
       console.log(file);
+      const fileName = file.name; 
+      // console.log("source filename: " + fileName);
+      setTargetFilename(fileName);
 
       const uploadImageToServer = async () => {
           try {
@@ -119,7 +128,7 @@ const Editor = () => {
                 console.error("blob is null");
                 return;
               }
-              const sourceImageFile = new File([blob], 'image.png', { type: 'image/png' });
+              const sourceImageFile = new File([blob], sourceFilename, { type: 'image/png' });
               setSourceImage(sourceImageFile);
 
               const img = new Image();
@@ -173,7 +182,7 @@ const Editor = () => {
                 console.error("blob is null");
                 return;
               }
-              const targetImageFile = new File([blob], 'image.png', { type: 'image/png' });
+              const targetImageFile = new File([blob], targetFilename, { type: 'image/png' });
               setTargetImage(targetImageFile);
 
               const img = new Image();
@@ -246,7 +255,7 @@ const Editor = () => {
                 console.error("blob is null");
                 return;
               }
-              const lastImageFile = new File([blob], 'image.png', { type: 'image/png' });
+              const lastImageFile = new File([blob], 'faceswaped_' + targetFilename, { type: 'image/png' });
               setLastImage(lastImageFile);
 
               const img = new Image();
@@ -354,13 +363,22 @@ const Editor = () => {
   }
 
   const doSwapface = async(event: { preventDefault: () => void; }) => {
+
+    const response = await getLocalIP();
+    const { ip } = response;
+    console.log("local ip: " + ip);
+
     const canvas = canvasRef.current;
     if (canvas && sourceImage && targetImage){
       setProcessing(true);
-      const response = await faceswap(token, sourceImage, targetImage);
+      const response = await faceswap(token, sourceImage, targetImage, ip);
       const { status, image_high_url, image_low_url } = response;
       if (status === "1") {
         renderCanvas(image_high_url, image_low_url);
+      }
+      else if (status === "-20") {
+        setShowDeny(true);
+        setProcessing(false);
       }
     }
   }
@@ -580,6 +598,14 @@ const Editor = () => {
         </div>
         
         {loading && <ScaleLoaderComponent />}
+        {
+          showDeny && 
+          <div className="toast toast-top toast-center mt-10">
+            <div className="alert alert-error">
+              <span className="text-white">后台检测到您上传大量18+的图片，已对您的IP进行了封禁，有疑问请联系：pixgen@163.com</span>
+            </div>
+          </div>
+        }
     </div>
   );
 };
