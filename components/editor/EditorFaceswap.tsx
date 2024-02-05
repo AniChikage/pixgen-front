@@ -374,6 +374,7 @@ const Editor = () => {
       const response = await faceswap(token, sourceImage, targetImage, ip);
       const { status, image_high_url, image_low_url } = response;
       if (status === "1") {
+        setShowDeny(false);
         renderCanvas(image_high_url, image_low_url);
       }
       else if (status === "-20") {

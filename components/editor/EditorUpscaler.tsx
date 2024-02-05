@@ -39,6 +39,7 @@ const Editor = () => {
     const [latestImageLowUrl, setLatestImageLowUrl] = useState<string>("");
     const [pro, setPro] = useState(false);
     const [loading, setLoading] = useState(false);
+    const [done, setDone] = useState(false);
 
     useEffect(() => {
       const image_url = sessionStorage.getItem('image_url');
@@ -198,6 +199,7 @@ const Editor = () => {
         if (status === "1") {
           renderCanvas(image_high_url, image_low_url);
           setUpscaled(false);
+          setDone(true);
         }
       }
     }
@@ -282,7 +284,7 @@ const Editor = () => {
                 <div className="flex justify-end flex-col gap-y-4 gap-x-0 mt-5 sm:flex-row sm:items-center sm:gap-y-0 sm:gap-x-3 sm:mt-0 sm:ps-7">
                     <button type="button" className="py-2 px-4 inline-flex items-center gap-x-2 text-sm font-semibold rounded-lg border border-gray-200 text-gray-500 hover:border-blue-600 hover:text-blue-600 disabled:opacity-50 disabled:pointer-events-none dark:border-gray-700 dark:text-gray-400 dark:hover:text-blue-500 dark:hover:border-blue-600 dark:focus:outline-none dark:focus:ring-1 dark:focus:ring-gray-600"
                       onClick={upscalerImage}
-                      disabled={processing || upscaled}
+                      disabled={processing || upscaled || done}
                     >
                     一键修复
                     </button>
