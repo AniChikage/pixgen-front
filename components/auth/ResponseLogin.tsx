@@ -16,6 +16,7 @@ export default function Login() {
     const [isValidEmail, setIsValidEmail] = useState(true);
     const [isValidPassword, setIsValidPassword] = useState(true);
     const [showHint, setShowHint] = useState(false);
+    const [iForgetPassword, setIForgetPassword] = useState(false);
 
     // useEffect(() => {
     //   const url = window.location.href;
@@ -120,6 +121,10 @@ export default function Login() {
         router.push("/register");
     }
 
+    const forgetPassword = async(event: { preventDefault: () => void; }) => {
+      setIForgetPassword(true)
+    }
+
     return (
         // bg-[url('https://preline.co/assets/svg/examples/squared-bg-element.svg')]
         <section className="border-red-500  min-h-screen flex items-center justify-center" 
@@ -148,7 +153,7 @@ export default function Login() {
                 </div>
 
                 <div className="text-right mt-2">
-                    <a href="/#" className="text-sm font-semibold text-gray-700 hover:text-blue-700 focus:text-blue-700">忘记密码？</a>
+                    <a href="/#" className="text-sm font-semibold text-gray-700 hover:text-blue-700 focus:text-blue-700"><button onClick={forgetPassword}>忘记密码？</button></a>
                 </div>
 
                 <button type="submit" onClick={login} className="w-full block bg-blue-500 duration-200 hover:bg-blue-400 focus:bg-blue-400 text-white font-semibold rounded-lg
@@ -187,6 +192,15 @@ export default function Login() {
                 </div>
               </div>
             </dialog>
+
+            {
+              iForgetPassword && 
+              <div className="toast toast-top toast-center mt-10">
+                <div className="alert alert-success">
+                  <span className="text-white">发送您的邮件地址或者用户名到：pixgen@163.com</span>
+                </div>
+              </div>
+            }
 
             </div>
         </section>

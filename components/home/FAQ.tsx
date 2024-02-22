@@ -70,6 +70,25 @@ function FAQ () {
                 不会保存，即用即删
                 </p>
             </div>
+            
+            <div className="py-4">
+                <h3 className="text-base font-semibold text-black dark:text-white">
+                怎么联系我们？
+                </h3>
+                <p className="mt-2 text-black/85 dark:text-white/85">
+                有任何问题您可以发送邮件到：pixgen@163.com，我们会最迟在1个工作日内回复
+                </p>
+            </div>
+
+            <div className="py-4">
+                <h3 className="text-base font-semibold text-black dark:text-white">
+                忘记密码？
+                </h3>
+                <p className="mt-2 text-black/85 dark:text-white/85">
+                您可以发送您的邮件地址或者用户名到：pixgen@163.com，我们会最迟在1个工作日内回复
+                </p>
+            </div>
+
             </div>
         </div>
         </div>
