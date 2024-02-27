@@ -495,6 +495,15 @@ const Editor = () => {
               />
           </div>
         </div>
+
+        {
+          processing && 
+          <div className="toast toast-top toast-center mt-10">
+            <div className="alert alert-success">
+              <span className="text-white">处理预计在2分钟时间内完成，请耐心等待，如果超过2分钟请刷新重试</span>
+            </div>
+          </div>
+        }
       {/* <button onClick={sendToBackend}>Send to Backend</button> */}
     </div>
   );

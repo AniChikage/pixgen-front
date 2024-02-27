@@ -33,6 +33,7 @@ const Editor = () => {
     const [sourceFilename, setSourceFilename] = useState<string>("");
     const [targetFilename, setTargetFilename] = useState<string>("");
     const [showDeny, setShowDeny] = useState(false);
+    const [showError, setShowError] = useState(false);
 
     const uploadedSource = (event: React.ChangeEvent<HTMLInputElement>) => {
       const fileInput = event.target;
@@ -368,6 +369,8 @@ const Editor = () => {
     const { ip } = response;
     console.log("local ip: " + ip);
 
+    setShowError(false)
+
     const canvas = canvasRef.current;
     if (canvas && sourceImage && targetImage){
       setProcessing(true);
@@ -381,6 +384,14 @@ const Editor = () => {
         setShowDeny(true);
         setProcessing(false);
       }
+      else if (status === "-100") {
+        setShowError(true);
+        setProcessing(false);
+      }
+      // else if (status === "-100") {
+      //   setShowDeny(true);
+      //   setProcessing(false);
+      // }
     }
   }
 
@@ -604,6 +615,22 @@ const Editor = () => {
           <div className="toast toast-top toast-center mt-10">
             <div className="alert alert-error">
               <span className="text-white">后台检测到您上传大量18+的图片，已对您的IP进行了封禁，有疑问请联系：pixgen@163.com</span>
+            </div>
+          </div>
+        }
+        {
+          showError && 
+          <div className="toast toast-top toast-center mt-10">
+            <div className="alert alert-error">
+              <span className="text-white">源或目标图片未能检测到完整的人脸，请上传新的图片尝试</span>
+            </div>
+          </div>
+        }
+        {
+          processing && 
+          <div className="toast toast-top toast-center mt-10">
+            <div className="alert alert-success">
+              <span className="text-white">处理预计在2分钟时间内完成，请耐心等待，如果超过2分钟请刷新重试</span>
             </div>
           </div>
         }
