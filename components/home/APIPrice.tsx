@@ -31,7 +31,7 @@ function APIPrice() {
     const payapi1 = async() => {
         const pay_modal = document.getElementById('pay_modal')
         if (!pay_modal) return;
-        setPrice("0.02");
+        setPrice("14.9");
         setSubscription("套餐一");
         pay_modal.showModal();
     };
@@ -39,7 +39,7 @@ function APIPrice() {
     const payapi2 = async() => {
         const pay_modal = document.getElementById('pay_modal')
         if (!pay_modal) return;
-        setPrice("0.03");
+        setPrice("24.9");
         setSubscription("套餐二");
         pay_modal.showModal();
     };
@@ -47,7 +47,7 @@ function APIPrice() {
     const payapi3 = async() => {
         const pay_modal = document.getElementById('pay_modal')
         if (!pay_modal) return;
-        setPrice("0.04");
+        setPrice("99.9");
         setSubscription("套餐三");
         pay_modal.showModal();
     };
@@ -55,7 +55,7 @@ function APIPrice() {
     const payapi4 = async() => {
         const pay_modal = document.getElementById('pay_modal')
         if (!pay_modal) return;
-        setPrice("0.05");
+        setPrice("149.9");
         setSubscription("套餐四");
         pay_modal.showModal();
     };
