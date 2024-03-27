@@ -13,6 +13,7 @@ export default function Profile () {
     const [effectiveTimestamp, setEffectiveTimestamp] = useState("-");
     const [effectiveCounts, setEffectiveCounts] = useState("-");
     const [orders, setOrders] = useState([]);
+    const [apiToken, setApiToken] = useState("");
 
     useEffect(() => {
       const loadProfile = async() => {
@@ -20,11 +21,12 @@ export default function Profile () {
         if (token) {
             try{
                 const response = await userProfile(token);
-                const { status, username, effective_timestamp, effective_counts } = response;
+                const { status, username, effective_timestamp, effective_counts, api_token } = response;
                 if (status == "1") {
                     setUsername(username);
                     setEffectiveTimestamp(effective_timestamp);
                     setEffectiveCounts(effective_counts)
+                    setApiToken(api_token);
                 }
             }
             catch (error) {
@@ -133,6 +135,7 @@ export default function Profile () {
                                 <ul>
                                     <li className="mb-2 text-white">到期时间：{effectiveTimestamp}</li>
                                     <li className="mb-2 text-white">剩余次数：{effectiveCounts}</li>
+                                    <li className="mb-2 text-white">API Token: {apiToken}</li>
                                 </ul>
                             </div>
                         </div>

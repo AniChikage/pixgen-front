@@ -157,7 +157,8 @@ function Nav () {
                         </details>
                     </li>
                     <li><a className='text-black dark:text-white text-base' href="/price">定价</a></li>
-                    <li><a className='text-black dark:text-white text-base' href="/docs" target="_blank">API</a></li>
+                    <li><a className='text-black dark:text-white text-base' href="/api-price">API</a></li>
+                    {/* <li><a className='text-black dark:text-white text-base' href="/docs" target="_blank">API</a></li> */}
                     </ul>
                 </div>
                 <div className='w-14 flex items-center justify-between'>
