@@ -98,6 +98,28 @@ export async function registerUser(
   }
 }
 
+export async function forgetPassword(
+  email: string
+) {
+  const fd = new FormData()
+  fd.append('email', email)
+
+  try {
+    const res = await fetch(`${API_ENDPOINT}/api/user/forgetpassword`, {
+      method: 'POST',
+      body: fd,
+      mode: 'cors',
+    })
+    console.log(res)
+    if (res.ok) {
+      const data = await res.json();
+      return data;
+    }
+  } catch (error) {
+    throw new Error(`forget password: ${error}`)
+  }
+}
+
 
 export async function userProfile(
   token: string,

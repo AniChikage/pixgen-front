@@ -80,14 +80,6 @@ function FAQ () {
                 </p>
             </div>
 
-            <div className="py-4">
-                <h3 className="text-base font-semibold text-black dark:text-white">
-                忘记密码？
-                </h3>
-                <p className="mt-2 text-black/85 dark:text-white/85">
-                您可以发送您的邮件地址或者用户名到：pixgen@163.com，我们会最迟在1个工作日内回复
-                </p>
-            </div>
 
             </div>
         </div>

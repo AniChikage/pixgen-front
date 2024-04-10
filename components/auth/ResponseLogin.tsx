@@ -122,7 +122,8 @@ export default function Login() {
     }
 
     const forgetPassword = async(event: { preventDefault: () => void; }) => {
-      setIForgetPassword(true)
+      // setIForgetPassword(true)
+      router.push("/forget");
     }
 
     return (
