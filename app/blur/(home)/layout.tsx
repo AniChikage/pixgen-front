@@ -11,7 +11,7 @@ import { RecoilRoot } from 'recoil';
 import { Metadata } from 'next';
 
 // export const metadata: Metadata = {
-//   title: 'PIXGEN',
+//   title: 'PIXGEN-AI图片处理技术分享',
 //   description: '智能AI图片处理工具, AI赋能',
 //   keywords: '一键, 消除物体, 模糊, 消除背景, 换脸, 人物换脸'
 // }

@@ -91,9 +91,11 @@ export default function Footer () {
         </div>
 
         <div className=" bg-neutral-100 dark:bg-black/90 p-3 text-center h-12">
-            {/* <span>© 2023 Copyright:</span> */}
             <a className="h-10 text-black dark:text-white text-xs" href="/#">
-                ©2024 PIXGEN. All Rights Reserved. 备案号: 京ICP备2023012598号
+                ©2024 PIXGEN. All Rights Reserved. 
+            </a>
+            <a className="h-10 text-black dark:text-white text-xs" href="https://beian.miit.gov.cn/" target="_blank">
+                备案号: 京ICP备2023012598号
             </a>
         </div>
         </footer>
